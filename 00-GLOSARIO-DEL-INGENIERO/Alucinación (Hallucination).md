@@ -1,367 +1,255 @@
 # Alucinación (Hallucination)
-## Cuando la IA "Inventa" Información que Parece Real
+## Cuando la IA “inventa” información que parece real
 
 ---
 
-## ¿Qué es una Alucinación?
+## ¿Qué es una alucinación?
 
-**En términos sencillos:**
-Imagina que le pides a tu amigo que te cuente sobre una película que nunca vio. Para no quedar mal, inventa detalles que suenan creíbles pero son completamente falsos. Una alucinación de IA es cuando la inteligencia artificial "inventa" información con total confianza, presentándola como si fuera un hecho real.
+**En términos sencillos**  
+Imagina que le preguntas a un amigo sobre una película que jamás vio. Para no quedar mal, inventa detalles que suenan convincentes pero son totalmente falsos. Una **alucinación de IA** ocurre cuando el modelo genera contenido ficticio con gran seguridad y lo presenta como un hecho verídico.
 
-**Explicación técnica:**
-Una alucinación es cuando un modelo de lenguaje genera información que no está basada en sus datos de entrenamiento o que es factualmente incorrecta, pero la presenta con un alto grado de confianza como si fuera verdadera.
-
----
-
-## Tipos de Alucinaciones
-
-### **1. Alucinación Factual**
-La IA inventa datos, fechas, nombres o estadísticas.
-
-**Ejemplo real:**
-```
-Pregunta: "¿Cuándo fue fundada la empresa ficticia 'TechnoMax Solutions'?"
-Respuesta de IA: "TechnoMax Solutions fue fundada en 2018 por María González y Carlos Ruiz en Barcelona, España. La empresa se especializa en desarrollo de software para el sector financiero y ha recaudado $2.5M en su Serie A."
-```
-**Problema:** La empresa no existe, pero la respuesta suena completamente creíble.
-
-### **2. Alucinación de Atribución**
-La IA atribuye citas, trabajos o declaraciones a personas incorrectas.
-
-**Ejemplo real:**
-```
-Pregunta: "¿Qué dijo Steve Jobs sobre la inteligencia artificial?"
-Respuesta de IA: "Steve Jobs dijo en 2015: 'La inteligencia artificial será la próxima gran revolución, más grande que el iPhone.' Lo mencionó en su conferencia de Stanford."
-```
-**Problema:** Steve Jobs murió en 2011, no pudo hacer esa declaración en 2015.
-
-### **3. Alucinación de Contexto**
-La IA inventa detalles sobre documentos o conversaciones que estás analizando.
-
-**Ejemplo real:**
-```
-Prompt: "Analiza este reporte de ventas" [documento que no menciona nada sobre competencia]
-Respuesta de IA: "El reporte indica que perdieron 15% de market share frente a la competencia directa, especialmente contra CompetitorX."
-```
-**Problema:** El documento no contenía esa información.
+**Desde un punto de vista técnico**  
+Un modelo de lenguaje alucina cuando produce datos o afirmaciones que no provienen de su entrenamiento (o son incorrectas) y, aun así, los expone con alta confianza.
 
 ---
 
-## Por Qué Ocurren las Alucinaciones
+## Tipos de alucinaciones
 
-### **1. Naturaleza del Entrenamiento**
-**Analogía:** Es como un estudiante que aprendió a escribir ensayos convincentes pero nunca aprendió a verificar hechos.
-
-**Explicación técnica:**
-Los modelos aprenden patrones de lenguaje, no bases de datos de hechos. Están entrenados para generar texto coherente y convincente, no necesariamente verdadero.
-
-### **2. Presión por Responder**
-**Analogía:** Como un vendedor que prefiere inventar una respuesta antes que admitir que no sabe algo.
-
-**Ejemplo:**
-```
-Pregunta: "¿Cuál es la capital de Zelandia del Norte?"
-IA (incorrecta): "La capital de Zelandia del Norte es Northport."
-IA (correcta): "No existe un país llamado 'Zelandia del Norte'. Quizás te refieres a Nueva Zelanda, cuya capital es Wellington."
-```
-
-### **3. Patrones de Entrenamiento**
-La IA ha visto millones de ejemplos donde después de una pregunta viene una respuesta "autoritativa", así que replica ese patrón.
+| Tipo                         | Descripción                                                                                                            | Ejemplo                                                                                                                                    |
+|------------------------------|------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| **Alucinación factual**      | Invención de datos, fechas, nombres o cifras.                                                                         | “TechnoMax Solutions fue fundada en 2018 por María González …” — la empresa no existe.                                                      |
+| **Alucinación de atribución**| Citas, obras o declaraciones asignadas a la persona equivocada.                                                       | “Steve Jobs dijo en 2015: ‘La IA será la próxima gran revolución…’” — Jobs falleció en 2011.                                                |
+| **Alucinación de contexto**  | Añade detalles inexistentes a documentos o conversaciones reales.                                                      | Al analizar un reporte de ventas, la IA afirma pérdidas de cuota de mercado que el documento no menciona.                                   |
 
 ---
 
-## Detectando Alucinaciones
+## ¿Por qué ocurren las alucinaciones?
 
-### **Señales de Alerta Inmediatas**
+1. **Naturaleza del entrenamiento**  
+   Los modelos aprenden patrones lingüísticos, no bases de datos de hechos.  
+   *Analogía:* estudiante que redacta ensayos brillantes sin verificar fuentes.
 
-#### **1. Confianza Excesiva en Datos Específicos**
-```
-🚨 ALERTA: "Según estudios recientes de la Universidad de Barcelona realizados en marzo de 2024..."
- MEJOR: "Búsqueda requerida para verificar estudios específicos"
-```
+2. **Presión por responder**  
+   El modelo prefiere dar una respuesta “segura” antes que admitir desconocimiento.  
+   *Ejemplo:*  
+   - Pregunta: “¿Cuál es la capital de Zelandia del Norte?”  
+   - IA incorrecta: “Northport.”  
+   - IA correcta: “No existe tal país; quizá te refieres a Nueva Zelanda, cuya capital es Wellington.”
 
-#### **2. Estadísticas Muy Precisas sin Fuente**
-```
-🚨 ALERTA: "El 73.6% de las empresas españolas implementaron IA en 2024"
-✅ MEJOR: "Una mayoría significativa de empresas ha adoptado IA (verificar estadísticas actuales)"
-```
-
-#### **3. Citas Textuales sin Referencia**
-```
-🚨 ALERTA: "Como dijo Elon Musk en 2023: 'La IA superará a los humanos en creatividad'"
-✅ MEJOR: "Musk ha expresado opiniones sobre IA (verificar citas específicas)"
-```
-
-### **Técnicas de Validación**
-
-#### **1. Cross-Reference Check**
-```python
-def validate_claim(claim):
-    sources = [
-        search_google(claim),
-        check_wikipedia(claim),
-        verify_official_sources(claim)
-    ]
-    confidence = calculate_confidence(sources)
-    return confidence > 0.8
-```
-
-#### **2. Prompt de Verificación**
-```
-"En tu respuesta anterior, mencionaste [DATO ESPECÍFICO]. ¿Cuál es tu nivel de confianza en esta información del 1 al 10? ¿Qué fuentes recomendarías verificar?"
-```
-
-#### **3. Solicitar Calificación de Confianza**
-```
-"Para cada afirmación factual en tu respuesta, incluye un nivel de confianza (Alta/Media/Baja) y sugiere fuentes de verificación."
-```
+3. **Patrones de diálogo**  
+   Tras millones de ejemplos de pregunta-respuesta, el modelo replica la autoridad del tono, incluso sin evidencia.
 
 ---
 
-## Estrategias de Prevención
+## Cómo detectar alucinaciones
 
-### **1. Prompts Anti-Alucinación**
+### Señales de alerta
 
-#### **Template Básico:**
-```
-"Actúa como [ROL ESPECÍFICO]. Si no tienes información verificada sobre algo, di claramente 'No tengo información verificada sobre X' en lugar de especular o inventar detalles."
-```
+- **Datos muy específicos sin fuente clara**  
+  > “Según un estudio de la Universidad de Barcelona de marzo 2024…”  
+  Mejor: “Se recomienda verificar estudios específicos.”
 
-#### **Template Avanzado:**
-```
-"Eres un analista de datos riguroso. Para cualquier estadística o dato específico:
-1. Si tienes alta confianza (datos de entrenamiento claros): Presenta el dato
-2. Si tienes media confianza: Marca como 'aproximado' o 'estimado'
-3. Si tienes baja confianza: Di 'requiere verificación' y sugiere fuentes
+- **Estadísticas con decimales exactos**  
+  > “El 73.6 % de las empresas españolas implementaron IA en 2024.”  
+  Mejor: “Muchas empresas han adoptado IA (verificar cifras actuales).”
 
-NUNCA inventes datos específicos como fechas exactas, estadísticas precisas, o citas textuales."
-```
+- **Citas textuales sin referencia**  
+  > “Elon Musk dijo en 2023: ‘La IA superará a los humanos en creatividad.’”  
+  Mejor: “Musk ha opinado sobre IA (verificar cita exacta).”
 
-### **2. Técnica de "Fuentes Explícitas"**
-```
-"Para cualquier afirmación factual, incluye entre paréntesis el nivel de confianza y tipo de fuente:
-- (Alta confianza - conocimiento general)
-- (Media confianza - patrones observados)
-- (Requiere verificación - dato específico)"
-```
+### Técnicas de validación
 
-### **3. Método de "Doble Validación"**
-```
-Paso 1: "Genera una respuesta a esta pregunta: [PREGUNTA]"
-Paso 2: "Ahora revisa tu respuesta anterior e identifica cualquier afirmación que podría ser especulativa o requerir verificación externa."
-```
+def validate_claim(claim: str) -> bool:
+"""
+Devuelve True si al menos dos de tres fuentes confirman el claim.
+"""
+sources = [
+search_google(claim),
+check_wikipedia(claim),
+verify_official_sources(claim)
+]
+confirmations = sum(bool(src) for src in sources)
+return confirmations >= 2
 
----
+text
+undefined
+Prompt de verificación:
+“En tu respuesta mencionaste [DATO].
 
-## Casos Reales de Alucinaciones Problemáticas
+¿Nivel de confianza (1–10)?
 
-### **Caso 1: Bufete de Abogados vs. ChatGPT**
-**Situación:** Abogados usaron ChatGPT para investigación legal
-**Alucinación:** IA inventó casos legales ficticios con nombres de jueces reales
-**Consecuencia:** Sanción judicial y daño reputacional
-**Lección:** Verificación obligatoria para información legal
+¿A qué fuentes recomiendas acudir para confirmarlo?”
 
-### **Caso 2: Empresa de Noticias**
-**Situación:** Periodista usó IA para verificar datos sobre empresa
-**Alucinación:** IA inventó escándalo financiero basado en patrones generales
-**Consecuencia:** Artículo difamatorio, demanda legal
-**Lección:** Cross-reference con múltiples fuentes reales
-
-### **Caso 3: Departamento de RRHH**
-**Situación:** RRHH usó IA para información sobre candidato
-**Alucinación:** IA inventó historial académico y laboral creíble
-**Consecuencia:** Contratación basada en información falsa
-**Lección:** Verificación independiente de todos los datos de candidatos
+text
 
 ---
 
-## Alucinaciones por Modelo y Cómo Prevenirlas
+## Estrategias para prevenir alucinaciones
 
-### **GPT-4**
-**Tendencia:** Alucinaciones en nombres específicos y fechas exactas
-**Prevención:**
-```
-"Si mencionas nombres de personas, empresas, o fechas específicas, marca claramente si estás seguro o si requiere verificación."
-```
+### 1. Prompts anti-alucinación
 
-### **Claude**
-**Tendencia:** Alucinaciones en citas textuales y estudios académicos
-**Prevención:**
-```
-"No proporciones citas textuales a menos que estés absolutamente seguro. En su lugar, parafrasea las ideas generales."
-```
+Eres un [ROL].
+Si no tienes información verificada sobre un punto, responde:
+“No tengo información verificada sobre X” en lugar de especular.
 
-### **Gemini**
-**Tendencia:** Alucinaciones en estadísticas específicas
-**Prevención:**
-```
-"Para estadísticas, usa rangos aproximados (ej: 'entre 60-80%') en lugar de números precisos, a menos que sean ampliamente conocidos."
-```
+text
+undefined
+Modo analista riguroso:
+
+Alta confianza → presenta el dato.
+
+Media confianza → marca como “aproximado”.
+
+Baja confianza → indica “requiere verificación” y sugiere fuentes.
+Nunca inventes cifras exactas, fechas o citas textuales.
+
+text
+
+### 2. Fuentes explícitas
+
+> “La inflación de 2024 fue del 3.1 % (alta confianza – INE).”
+
+### 3. Doble validación
+
+1. **Paso A** – Genera la respuesta.  
+2. **Paso B** – Revisa tu texto e identifica afirmaciones especulativas; marca “requiere verificación”.
 
 ---
 
-## Herramientas Anti-Alucinación
+## Casos reales
 
-### **1. Prompt Injection de Verificación**
-```python
-def add_verification_layer(prompt):
-    verification_prompt = """
-    IMPORTANTE: Antes de responder, considera:
-    - ¿Esta información es de conocimiento general verificable?
-    - ¿Estoy inventando detalles específicos?
-    - ¿Debo sugerir verificación externa?
-    
-    Si tienes dudas sobre cualquier dato específico, di claramente "Requiere verificación" y sugiere fuentes apropiadas.
-    """
-    return verification_prompt + "\n\n" + prompt
-```
+| Caso                | Alucinación                                     | Consecuencia                                | Lección                                  |
+|---------------------|-------------------------------------------------|---------------------------------------------|------------------------------------------|
+| Bufete de abogados  | Inventó jurisprudencia ficticia                 | Sanción judicial, reputación dañada         | Verificación obligatoria de casos.       |
+| Medio de noticias   | Escándalo financiero inexistente                | Demanda legal por difamación                | Cruzar fuentes antes de publicar datos.  |
+| RR. HH. corporativo | Historial académico inventado para un candidato | Contratación errónea                        | Verificar credenciales externamente.     |
 
-### **2. Sistema de Scoring de Confianza**
-```python
-def analyze_response_reliability(response):
-    risk_indicators = [
-        r'\d{1,2}\.\d+%',  # Estadísticas muy específicas
-        r'según.*estudio',  # Referencias a estudios
-        r'en \d{4} dijo',   # Citas con fechas específicas
-        r'la empresa.*fundada en'  # Datos históricos específicos
-    ]
-    
-    risk_score = sum(1 for indicator in risk_indicators 
-                    if re.search(indicator, response))
-    
-    return "HIGH_RISK" if risk_score > 2 else "LOW_RISK"
-```
+---
 
-### **3. Validador Automático**
-```python
+## Alucinaciones por modelo y prevención
+
+| Modelo | Tendencia principal                       | Recomendación de prompt                                            |
+|--------|-------------------------------------------|--------------------------------------------------------------------|
+| GPT-4  | Nombres propios y fechas exactas          | “Indica confianza o ‘requiere verificación’ para nombres/fechas.” |
+| Claude | Citas textuales y papers académicos       | “Solo citas si estás 100 % seguro; de lo contrario, parafrasea.”   |
+| Gemini | Estadísticas numéricas muy específicas    | “Usa rangos (‘60-80 %’) salvo datos ampliamente aceptados.”        |
+
+---
+
+## Herramientas anti-alucinación
+
+def add_verification_layer(prompt: str) -> str:
+return (
+"IMPORTANTE: antes de responder, pregúntate:\n"
+"- ¿Es información verificable?\n"
+"- ¿Estoy inventando detalles específicos?\n"
+"- Si dudas, marca ‘Requiere verificación’ y sugiere fuentes.\n\n"
+) + prompt
+
+text
+undefined
+import re
+def analyze_response_reliability(response: str) -> str:
+risk_indicators = [
+r'\d{1,2}.\d+%', # porcentajes exactos
+r'según.*estudio', # menciones vagas a estudios
+r'en \d{4} dijo', # citas con fechas
+r'la empresa.*fundada en' # datos históricos específicos
+]
+risk_score = sum(bool(re.search(p, response)) for p in risk_indicators)
+return "HIGH_RISK" if risk_score > 2 else "LOW_RISK"
+
+text
+undefined
 class HallucinationDetector:
-    def __init__(self):
-        self.fact_checkers = [
-            WikipediaValidator(),
-            DateValidator(),
-            PersonValidator()
-        ]
-    
-    def validate_response(self, response):
-        claims = extract_factual_claims(response)
-        for claim in claims:
-            for validator in self.fact_checkers:
-                if not validator.verify(claim):
-                    return f"⚠️ Claim requires verification: {claim}"
-        return "✅ No obvious hallucinations detected"
-```
+def init(self):
+self.validators = [
+WikipediaValidator(),
+DateValidator(),
+PersonValidator()
+]
+def validate_response(self, resp: str) -> str:
+for claim in extract_factual_claims(resp):
+if not all(v.verify(claim) for v in self.validators):
+return f"⚠️ Verificar: {claim}"
+return "✅ Sin alucinaciones evidentes"
+
+text
 
 ---
 
-## Estrategias por Industria
+## Estrategias sectoriales
 
-### **Legal**
-```
-"Eres un asistente legal. NUNCA inventes casos, estatutos, o precedentes legales. Si no tienes certeza sobre información legal específica, responde: 'Esta información requiere verificación en bases de datos legales oficiales' y sugiere fuentes como BOE, jurisprudencia del TS, etc."
-```
-
-### **Médica**
-```
-"Eres un asistente médico informativo. NUNCA proporciones diagnósticos específicos o dosificaciones exactas. Para cualquier información médica específica, incluye: 'Esta información es solo educativa. Consulta siempre con un profesional médico certificado.'"
-```
-
-### **Financiera**
-```
-"Eres un analista financiero. Para datos de mercado específicos (precios, volúmenes, ratios), siempre indica: 'Datos aproximados - verificar en fuentes financieras actualizadas' y menciona fuentes como Bloomberg, Reuters, o informes oficiales de la empresa."
-```
-
-### **Académica/Investigación**
-```
-"Eres un asistente de investigación. Para cualquier referencia a papers, estudios, o datos de investigación específicos, usa el formato: 'Tipo de estudio sugerido a verificar' en lugar de inventar referencias específicas. Sugiere bases de datos académicas apropiadas."
-```
+| Sector      | Prompt seguro                                                                                                                |
+|-------------|------------------------------------------------------------------------------------------------------------------------------|
+| **Legal**   | “Nunca inventes casos o artículos. Si no hay certeza, indica ‘Verificar en bases como Westlaw o BOE’.”                       |
+| **Médico**  | “Información educativa únicamente. Para dosificaciones o diagnósticos, remitir a un profesional sanitario.”                  |
+| **Finanzas**| “Usa rangos para métricas y sugiere Bloomberg, Reuters o informes oficiales para cifras exactas.”                             |
+| **Académico**| “Cita DOI o fuente; si no, marca ‘referencia a verificar’ y sugiere bases como Scopus o Google Scholar.”                     |
 
 ---
 
-## Checklist Anti-Alucinación
+## Checklist anti-alucinación
 
-### **Antes de Enviar un Prompt:**
-- [ ] ¿He especificado que no invente información?
-- [ ] ¿He pedido niveles de confianza?
-- [ ] ¿He incluido instrucciones sobre qué hacer con información incierta?
+### Antes de enviar un prompt
+- [ ] ¿Especificaste que no se invente información?  
+- [ ] ¿Solicitaste nivel de confianza?  
+- [ ] ¿Indicaciones para manejar dudas?
 
-### **Al Revisar una Respuesta:**
-- [ ] ¿Hay estadísticas muy específicas sin fuente?
-- [ ] ¿Hay nombres de personas, empresas o estudios que suenan "demasiado perfectos"?
-- [ ] ¿Hay fechas exactas para eventos que no son de conocimiento general?
-- [ ] ¿La información es verificable independientemente?
+### Al revisar una respuesta
+- [ ] ¿Estadísticas sin fuente?  
+- [ ] ¿Nombres/datos “demasiado perfectos”?  
+- [ ] ¿Fechas exactas poco conocidas?  
+- [ ] ¿Afirmaciones verificables externamente?
 
-### **Para Uso Empresarial:**
-- [ ] ¿Tengo un proceso de fact-checking implementado?
-- [ ] ¿He entrenado al equipo en detección de alucinaciones?
-- [ ] ¿Tengo disclaimers apropiados para contenido generado por IA?
-
----
-
-## Templates Seguros por Caso de Uso
-
-### **Investigación de Mercado**
-```
-"Analiza tendencias generales en [INDUSTRIA] basándote en patrones conocidos. Para cualquier estadística específica o dato de empresa particular, marca claramente 'REQUIERE VERIFICACIÓN' y sugiere fuentes apropiadas como informes de consultoras (McKinsey, BCG) o estudios sectoriales."
-```
-
-### **Contenido Marketing**
-```
-"Crea contenido de marketing para [PRODUCTO]. Si necesitas incluir datos o estadísticas, usa aproximaciones generales ('la mayoría de expertos concuerda') en lugar de números específicos. Para cualquier claim sobre competencia, marca como 'información a verificar'."
-```
-
-### **Análisis Financiero**
-```
-"Proporciona análisis general sobre [EMPRESA/SECTOR]. Para métricas financieras específicas, usa rangos aproximados y siempre incluye 'verificar en informes oficiales más recientes'. No inventes ratios específicos o proyecciones numéricas exactas."
-```
+### Para uso empresarial
+- [ ] ¿Proceso de fact-checking implantado?  
+- [ ] ¿Equipo entrenado en detección de alucinaciones?  
+- [ ] ¿Disclaimers en contenido generado por IA?
 
 ---
 
-## Métricas de Calidad Anti-Alucinación
+## Métricas de calidad anti-alucinación
 
-### **Para Equipos de Desarrollo:**
-```python
-def measure_hallucination_risk(prompt_responses):
-    metrics = {
-        'specific_claims_ratio': count_specific_claims(prompt_responses) / total_claims,
-        'verification_suggestions': count_verification_prompts(prompt_responses),
-        'confidence_indicators': count_confidence_markers(prompt_responses)
-    }
-    
-    safety_score = calculate_safety_score(metrics)
-    return safety_score
-```
+def measure_hallucination_risk(responses: list[str]) -> float:
+total_claims = count_claims(responses)
+metrics = {
+"specific_claims_ratio": count_specific_claims(responses) / total_claims,
+"verification_suggestions": count_verification_prompts(responses),
+"confidence_indicators": count_confidence_markers(responses)
+}
+return calculate_safety_score(metrics)
 
-### **KPIs de Seguridad:**
-- **Tasa de verificación sugerida:** >70% para información específica
-- **Uso de disclaimers:** 100% para información crítica
-- **Claims sin fuente:** <10% del total de afirmaciones
+text
 
----
+**KPIs recomendados**
 
-## Casos de Estudio: Implementación Exitosa
-
-### **Empresa de Consultoría**
-**Problema:** Consultores usando IA para research con datos incorrectos
-**Solución:**
-```
-1. Prompts estandarizados con anti-hallucination
-2. Proceso de verificación obligatorio
-3. Templates con disclaimers automáticos
-```
-**Resultado:** 90% reducción en datos incorrectos
-
-### **Medio de Comunicación**
-**Problema:** Periodistas obtenían "quotes" inventadas
-**Solución:**
-```
-1. Política estricta: IA solo para ideas generales
-2. Verificación independiente obligatoria
-3. Training del equipo en detección
-```
-**Resultado:** Cero incidentes en 12 meses
+| Métrica                                | Objetivo |
+|----------------------------------------|----------|
+| Tasa de “requiere verificación”        | > 70 % de afirmaciones específicas |
+| Uso de disclaimers en info crítica     | 100 % |
+| Claims sin fuente                      | < 10 % |
 
 ---
 
-**Recuerda:** Las alucinaciones no son errores del modelo - son características inherentes. Tu trabajo es diseñar prompts y procesos que minimicen su impacto y maximicen la utilidad de la IA.
+## Casos de estudio: implementación exitosa
 
-**Siguiente lectura recomendada:** Temperatura y Top-P - Cómo controlar la creatividad y precisión de las respuestas.
+1. **Consultora multinacional**  
+   - Estandarizó prompts anti-alucinación  
+   - Impuso verificación obligatoria  
+   - Resultado: **90 % menos** datos incorrectos
+
+2. **Medio digital**  
+   - Política: la IA sólo sugiere ideas, no hechos no verificados  
+   - Doble validación editorial  
+   - Resultado: **0 incidentes** en 12 meses
+
+---
+
+> **Conclusión**  
+> Las alucinaciones son inherentes a los modelos de lenguaje. Diseña prompts responsables, implementa validación y educa a los usuarios para minimizar su impacto y aprovechar de forma segura la IA.
+
+---
+
+### Lectura recomendada
+*Temperatura y Top-P: cómo equilibrar creatividad y precisión en las respuestas de IA.*
