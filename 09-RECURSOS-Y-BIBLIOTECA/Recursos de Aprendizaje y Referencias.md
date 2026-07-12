@@ -218,7 +218,7 @@ Esta sección contiene una biblioteca curada de recursos externos para profundiz
 | Evento | Frecuencia | Precio | Modalidad | URL | Descripción | Próxima Fecha |
 |--------|------------|--------|-----------|-----|-------------|---------------|
 | **NeurIPS** | Anual | **$500-2000** | Híbrido | [neurips.cc](https://neurips.cc) | Premier conference en ML y IA | Diciembre 2025 |
-| **ICML** | Anual | **$400-1500** | Híbrido | [icml.cc](https://icml.cc) | International Conference on Machine Learning | Julio 2025 |
+| **ICML** | Anual | **$400-1500** | Híbrido | [icml.cc](https://icml.cc) | International Conference on Machine Learning | Julio 2026 |
 | **AI World** | Anual | **$1000-3000** | Presencial | [aiworld.com](https://aiworld.com) | Conferencia empresarial de IA | Septiembre 2025 |
 | **Prompt Engineering Summit** | Anual | **$300-800** | Online | [promptsummit.ai](https://promptsummit.ai) | Especializada en prompt engineering | Abril 2025 |
 
@@ -359,5 +359,5 @@ Esta sección contiene una biblioteca curada de recursos externos para profundiz
 
 ---
 
-*Última actualización: Julio 2025*
+*Última actualización: Julio 2026*
 *Próxima revisión programada: Octubre 2025*
