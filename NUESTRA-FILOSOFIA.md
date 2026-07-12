@@ -226,7 +226,7 @@ Cada sección incluye:
 - **v1.0**: Fundamentos y técnicas básicas
 - **v1.1**: Casos de uso empresariales
 - **v1.2**: Técnicas avanzadas y optimización
-- **v2.0**: Integración con herramientas y automatización
+- **v2.0**: Function Calling, Proyecto Integrador, Visión y Marcos de Decisión (actual)
 
 ---
 
