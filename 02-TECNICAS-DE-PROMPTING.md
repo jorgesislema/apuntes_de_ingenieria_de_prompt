@@ -57,7 +57,7 @@ Eres el CMO de una startup fintech. Crea una estrategia de contenido para Linked
 Escribe un email de renuncia profesional que:
 - Mantenga una relación positiva con el empleador
 - No revele el motivo real de la renuncia
-- Ofrezca periodo de transición de 2 semanas
+- Ofrezca período de transición de 2 semanas
 - Tenga tono agradecido pero firme
 - Sea exactamente 150 palabras
 ```
@@ -510,6 +510,314 @@ PENSAMIENTO: [Formular hipótesis sobre causas específicas]
 ACCIÓN: [Probar cada hipótesis]
 ...
 ```
+
+---
+
+## 2.5 Tree-of-Thought (ToT) Prompting
+
+### **¿Qué es Tree-of-Thought?**
+
+Tree-of-Thought significa "árbol de pensamiento" - en lugar de seguir una sola línea de razonamiento como hace Chain-of-Thought, exploras múltiples caminos de razonamiento al mismo tiempo y luego comparas cuál es el mejor. Es como un árbol que crece en muchas direcciones y luego eliges la rama más fuerte.
+
+**Explicación como para un niño:**
+Imagina que estás perdido en un bosque. En Chain-of-Thought caminas por un solo sendero hasta encontrar la salida. En Tree-of-Thought envías exploradores por 5 senderos diferentes al mismo tiempo, cada uno te trae información distinta, y luego tú comparas y decides cuál es el mejor camino.
+
+### **¿En qué se Diferencia de Chain-of-Thought?**
+
+| Chain-of-Thought (CoT) | Tree-of-Thought (ToT) |
+|------------------------|----------------------|
+| Una sola línea de razonamiento | Múltiples líneas exploradas |
+| Pasos secuenciales lineales | Ramas paralelas que se evalúan |
+| "Piensa paso a paso" | "Piensa en varias alternativas, evalúa cada una, elige la mejor" |
+| Ideal para problemas con una respuesta clara | Ideal para decisiones con múltiples opciones válidas |
+| Como un rio que fluye en una direccion | Como las ramas de un arbol que se abren |
+
+### **Cuándo Usar Tree-of-Thought:**
+
+- Decisiones complejas con múltiples opciones válidas
+- Planificación estratégica donde necesitas evaluar pros y contras de varios caminos
+- Resolución creativa de problemas donde no hay una "respuesta correcta"
+- Análisis de escenarios donde necesitas comparar diferentes futuros posibles
+- Evaluación de contrataciones, inversiones o decisiones de alto impacto
+
+### **Estructura de Tree-of-Thought:**
+
+**FÓRMULA BÁSICA:**
+```
+[CONTEXTO DEL PROBLEMA] + [GENERA MÚLTIPLES OPCIONES] + [EVALÚA CADA OPCIÓN] + [COMPARA Y SELECCIONA] + [JUSTIFICA LA DECISIÓN]
+```
+
+### **Ejemplos Profesionales:**
+
+#### **Ejemplo 1: Evaluación de Estrategia de Producto**
+```
+Actúas como Director de Producto de una app de delivery de comida. Estamos evaluando 3 estrategias diferentes para crecer un 30% este trimestre. Usa la metodología Tree-of-Thought:
+
+CONTEXTO: App con 50,000 usuarios activos en 3 ciudades de México. Presupuesto de marketing: $200K. Equipo de desarrollo: 8 personas.
+
+OPCIÓN A: Expandirnos a 2 nuevas ciudades
+OPCIÓN B: Agregar servicio de supermercado a domicilio en ciudades actuales
+OPCIÓN C: Crear programa de lealtad agresivo con descuentos
+
+Para CADA opción, analiza:
+1. Potencial de crecimiento estimado (usuarios nuevos)
+2. Costo de implementación aproximado
+3. Riesgos principales
+4. Tiempo estimado para ver resultados
+5. Sostenibilidad a largo plazo
+
+Luego COMPARA las 3 opciones lado a lado y RECOMIENDA cuál elegir, explicando por qué descartas las otras dos.
+```
+
+#### **Ejemplo 2: Decisión de Contratación**
+```
+Eres Director de RRHH de una fintech de 80 empleados. Necesitamos contratar un CTO y tenemos 3 perfiles finalistas:
+
+PERFIL A: Ingeniero senior con 15 años en banca tradicional, experiencia en sistemas legacy, sin experiencia en startups
+PERFIL B: CTO de una startup que creció de 10 a 50 empleados, experiencia en Python y cloud, 8 años de experiencia
+PERFIL C: Líder técnico en una big tech (FAANG), 12 años de experiencia, experto en escalabilidad pero salario 40% mayor que los otros
+
+Para CADA perfil, evalúa como un árbol de pensamiento:
+- RAMA 1 - Ajuste cultural: ¿Cómo encajaría en nuestra cultura startup?
+- RAMA 2 - Capacidad técnica: ¿Puede manejar nuestra infraestructura actual y futura?
+- RAMA 3 - Liderazgo: ¿Puede construir y liderar un equipo de 15 ingenieros?
+- RAMA 4 - Costo-beneficio: ¿El retorno de inversión justifica el salario?
+- RAMA 5 - Riesgo de salida: ¿Probabilidad de que se quede al menos 3 años?
+
+Al final, COMPARA los 3 perfiles en una tabla de puntuación y da tu RECOMENDACIÓN FINAL justificada.
+```
+
+#### **Ejemplo 3: Estrategia de Entrada a Mercado**
+```
+Como Director de Expansión de una empresa de software educativo, analiza 3 posibles mercados para entrar en Latinoamérica:
+
+MERCADO 1: Colombia (Bogotá)
+MERCADO 2: Chile (Santiago)  
+MERCADO 3: Perú (Lima)
+
+Para cada mercado, explora estas ramas de pensamiento:
+- TAMAÑO DEL MERCADO: ¿Cuántas escuelas/universidades podrían ser clientes?
+- COMPETENCIA LOCAL: ¿Quiénes son los competidores y qué tan fuertes son?
+- BARRERAS DE ENTRADA: Regulaciones, idioma, moneda, cultura de negocios
+- COSTO DE OPERACIÓN: Oficina, equipo local, adaptación del producto
+- RENTABILIDAD PROYECTADA: ¿En cuánto tiempo alcanzamos el punto de equilibrio?
+
+COMPARA los 3 mercados y RECOMIENDA en qué orden deberíamos entrar (primero, segundo, tercero) con justificación.
+```
+
+### **Técnicas Avanzadas de Tree-of-Thought:**
+
+#### **1. ToT con Scoring Numérico**
+```
+Problema: Elegir el nuevo sistema CRM para nuestra empresa (500 empleados, fuerza de ventas de 50 personas).
+
+Evalúa 3 opciones (Salesforce, HubSpot, Zoho) explorando estas 5 ramas:
+1. Costo total a 3 años (peso: 30%)
+2. Facilidad de implementación (peso: 20%)
+3. Funcionalidades nativas sin plugins (peso: 20%)
+4. Soporte y comunidad en español (peso: 15%)
+5. Capacidad de integración con nuestras herramientas actuales (peso: 15%)
+
+Para cada rama y cada opción, asigna una puntuación del 1 al 10.
+Calcula la puntuación ponderada total. Recomienda la opción ganadora.
+```
+
+#### **2. ToT con "Abogado del Diablo" por Rama**
+```
+Estamos decidiendo si construir nuestra propia pasarela de pagos o integrar una existente (Stripe, MercadoPago).
+
+Explora ambas opciones en 4 ramas:
+1. Costo de desarrollo y mantenimiento
+2. Tiempo de salida al mercado
+3. Control sobre la experiencia del usuario
+4. Riesgo regulatorio y de seguridad
+
+PARA CADA RAMA:
+- Primero defiende la opción A (construir propia)
+- Luego defiende la opción B (integrar externa)
+- Finalmente da tu veredicto imparcial para esa rama
+
+SÍNTESIS FINAL: Basándote en los veredictos de las 4 ramas, ¿cuál opción gana y por qué?
+```
+
+### **Errores Comunes en Tree-of-Thought:**
+
+#### **ERROR 1: Explorar demasiadas ramas**
+**MALO:**
+```
+"Evalúa 15 estrategias diferentes para crecer nuestra startup"
+```
+**BUENO:**
+```
+"Evalúa las 3 estrategias de crecimiento más prometedoras para nuestra startup: expansión geográfica, nuevos segmentos de cliente, o diversificación de producto. Compara y recomienda la mejor."
+```
+**¿Por qué?** Con demasiadas ramas el análisis se vuelve superficial. 3-5 ramas es el punto dulce.
+
+#### **ERROR 2: No comparar al final**
+**MALO:** Analizar cada opción pero nunca hacer la comparación lado a lado ni tomar una decisión.
+**BUENO:** Incluir siempre una sección de comparación explícita y una recomendación final clara.
+
+#### **ERROR 3: Ramas que no son independientes**
+**MALO:** Ramas que se solapan ("Costo de empleados" y "Costo de salarios")
+**BUENO:** Ramas claramente diferenciadas que cubren distintos aspectos del problema.
+
+### **Ejercicios Prácticos de Tree-of-Thought:**
+
+#### **Ejercicio 1: Elección de Carrera Profesional**
+Un estudiante universitario debe elegir entre 3 caminos profesionales: trabajar en una gran corporación, unirse a una startup, o emprender su propio negocio. Crea un prompt ToT que lo ayude a evaluar las 3 opciones usando 4 ramas de análisis (estabilidad, crecimiento, satisfacción personal, ingresos potenciales).
+
+#### **Ejercicio 2: Planificación de Vacaciones Familiares**
+Una familia de 4 personas (padres y dos hijos de 8 y 14 años) tiene presupuesto de $3,000 para vacaciones. Evalúa 3 opciones: playa todo incluido, ciudad cultural con museos, o aventura en montaña. Usa ToT para analizar cada opción y recomendar la mejor para la familia.
+
+#### **Ejercicio 3: Aplica ToT a tu Propia Decisión**
+Piensa en una decisión real que necesites tomar en tu vida o trabajo. Crea un prompt usando Tree-of-Thought con al menos 3 opciones y 4 ramas de análisis. Evalúa el resultado: ¿te ayudó a ver la decisión con más claridad?
+
+---
+
+## 2.6 Prompting Multimodal (Texto + Imagenes)
+
+### **¿Qué es el Prompting Multimodal?**
+
+El prompting multimodal es la capacidad de interactuar con la IA usando texto e imágenes al mismo tiempo. Los modelos modernos no solo "leen" texto: también pueden "ver" imágenes y entender lo que hay en ellas. Puedes subir una foto, un gráfico o un documento escaneado y hacer preguntas sobre lo que aparece.
+
+**Explicación como para un niño:**
+Es como cuando le muestras una foto a un amigo y le preguntas: "¿qué hay en esta foto?" o "¿puedes leer lo que dice este cartel?". Tu amigo ve la imagen y te responde combinando lo que ve con lo que sabe. La IA multimodal hace exactamente eso: "ve" tu imagen y te responde sobre ella.
+
+### **¿Por Qué es Revolucionario?**
+
+Antes, solo podías dar texto y recibir texto. Ahora puedes:
+- Mostrar una foto de un plato de comida y preguntar cómo se prepara
+- Subir un gráfico financiero y pedir que te lo explique
+- Enseñar un diagrama dibujado a mano y que te lo convierta en pasos
+- Mostrar una captura de pantalla de un error y pedir la solución
+- Subir la foto de un producto y que te escriba la descripción para venderlo
+
+### **Herramientas Populares con Capacidad Multimodal:**
+
+- **ChatGPT (GPT-4V, GPT-4o)**: Puedes subir imágenes en la conversación y hacer preguntas
+- **Google Gemini**: Analiza imágenes, capturas de pantalla y documentos
+- **Microsoft Copilot**: Integración con imágenes en Office 365 y Edge
+- **Claude (Sonnet/Opus)**: Capacidad de analizar imágenes, gráficos y documentos
+
+Todas estas herramientas funcionan de forma similar: arrastras una imagen al chat, escribes tu pregunta, y la IA responde combinando lo que "ve" con lo que "sabe".
+
+### **Cuándo Usar Prompting Multimodal:**
+
+- Análisis de gráficos, tablas y dashboards
+- Descripción de productos para e-commerce o catálogos
+- Extracción de información de documentos escaneados o fotos
+- Análisis visual de diagnósticos (no médico): identificar problemas en fotos
+- Traducción de contenido visual: carteles, menús, señales en otros idiomas
+- Asistencia creativa: analizar un diseño, logo o boceto y dar retroalimentación
+
+### **Estructura de un Prompt Multimodal Efectivo:**
+
+**FÓRMULA:**
+```
+[SUBIR IMAGEN] + [DESCRIBIR QUÉ HAY EN LA IMAGEN] + [PREGUNTA ESPECÍFICA] + [FORMATO DE RESPUESTA]
+```
+
+La clave es que NO asumas que la IA "ve" lo mismo que tú ves. Describe brevemente qué contiene la imagen y qué quieres obtener de ella.
+
+### **Ejemplos Prácticos del Mundo Real:**
+
+#### **Ejemplo 1: Análisis de un Gráfico de Ventas**
+```
+[Subes la imagen de un gráfico de barras de ventas mensuales]
+
+Prompt: "Este gráfico muestra las ventas mensuales de nuestra tienda de ropa durante 2024. Analízalo y dime:
+1. ¿Cuáles fueron los 3 meses con mejores ventas?
+2. ¿Qué tendencia general ves a lo largo del año?
+3. ¿En qué meses hubo caídas significativas?
+4. ¿Qué recomendaciones darías para el próximo año basándote en este patrón?
+
+Explícalo como si yo fuera el dueño de la tienda, sin ser experto en análisis de datos."
+```
+
+#### **Ejemplo 2: Descripción de Producto para E-commerce**
+```
+[Subes una foto de una lámpara de escritorio moderna, color negro, con brazo ajustable]
+
+Prompt: "Mira esta foto de una lámpara de escritorio que quiero vender en mi tienda online. Necesito que:
+1. Describas el producto en 3 líneas, destacando su diseño y funcionalidad
+2. Escribas 5 características clave (bullets) que llamen la atención del comprador
+3. Sugieras un título atractivo para la página del producto
+4. Recomiendes un precio basándote en cómo se ve (asume gama media)
+
+Tono: profesional pero cálido, para una tienda de decoración moderna."
+```
+
+#### **Ejemplo 3: Extraer Texto de un Documento Fotografiado**
+```
+[Subes una foto de una receta médica escrita a mano o un documento escaneado]
+
+Prompt: "Esta imagen es una foto de una receta/convención que tomé con mi celular. Necesito que:
+1. Transcribas TODO el texto que puedes leer, línea por línea
+2. Si hay alguna palabra que no puedes leer claramente, indícalo con [ilegible]
+3. Estructura la información en formato ordenado
+
+Esto es para mi archivo personal, no para uso médico."
+```
+
+#### **Ejemplo 4: Comparación Visual de Productos**
+```
+[Subes fotos de 3 sillas de oficina diferentes]
+
+Prompt: "Te muestro 3 sillas de oficina que estoy considerando comprar. Analízalas visualmente y dime:
+1. ¿Cuál parece más ergonómica y por qué (basándote en lo que ves: soporte lumbar, reposabrazos, etc.)?
+2. Diferencias visibles de material y calidad entre las tres
+3. ¿Cuál recomendarías para alguien que trabaja 8+ horas sentado?
+4. ¿Cuál parece tener mejor relación calidad-precio según lo que se ve?
+
+No necesito medidas exactas, solo tu análisis basado en lo que puedes observar."
+```
+
+### **Buenas Prácticas para Prompting Multimodal:**
+
+#### **BUENO:**
+```
+[Imagen de un menú de restaurante en italiano]
+
+"Esta es una foto del menú de un restaurante en Roma. No hablo italiano. ¿Puedes:
+1. Traducir TODOS los platos al español
+2. Identificar cuáles son vegetarianos (márcalos con [V])
+3. Recomendar los 3 platos que se ven más interesantes
+
+Gracias."
+```
+
+**¿Por qué funciona?** Describe el contexto (menú en italiano), especifica la necesidad (traducción), y pide formato específico (marcar vegetarianos).
+
+#### **MALO:**
+```
+[Imagen de un menú de restaurante en italiano]
+
+"¿Qué hay aquí?"
+```
+
+**¿Por qué falla?** No das contexto, no especificas qué quieres obtener. La IA puede decirte genéricamente que es un menú, pero no sabrá que necesitas traducción.
+
+### **Limitaciones Importantes que Debes Conocer:**
+
+1. **La IA no tiene visión humana real**: Puede no ver detalles muy pequeños o texto muy borroso
+2. **No puede identificar personas específicas**: Por razones de privacidad, no te dirá "esa persona es Juan Pérez"
+3. **Documentos con información sensible**: No subas documentos con datos bancarios, médicos o personales a herramientas públicas
+4. **La calidad de la imagen importa**: Una foto borrosa = un análisis pobre. Asegúrate de que la imagen sea clara
+5. **No es un reemplazo de software especializado**: Para OCR profesional de documentos, usa herramientas dedicadas. La IA multimodal es un complemento, no un reemplazo
+
+### **Ejercicios Prácticos de Prompting Multimodal:**
+
+#### **Ejercicio 1: Tu Primer Prompt con Imagen**
+Toma una foto de tu escritorio o espacio de trabajo. Súbela a ChatGPT, Copilot o Gemini con este prompt: "Analiza mi espacio de trabajo y dame 3 recomendaciones para hacerlo más productivo y organizado."
+
+#### **Ejercicio 2: Análisis de Gráfico**
+Busca en internet un gráfico simple de barras o líneas (por ejemplo, "ventas trimestrales" o "temperatura mensual"). Súbelo y pide: "Explícame este gráfico como si yo fuera un estudiante de secundaria. ¿Qué tendencia ves? ¿Hay algo sorprendente?"
+
+#### **Ejercicio 3: Descripción para Vender**
+Toma una foto de cualquier objeto de tu casa (una taza, una planta, un libro). Súbela y pide: "Escribe la descripción de este producto para venderlo en Facebook Marketplace. Incluye título llamativo, 3 características, y precio sugerido."
+
+#### **Ejercicio 4: Traducción Visual**
+Busca una foto de un cartel, menú o señal en un idioma que no entiendas. Súbela y pide: "Traduce todo el texto que veas en esta imagen al español. Si hay símbolos o iconos, explícame qué significan."
 
 ---
 
