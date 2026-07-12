@@ -25,7 +25,7 @@
 
 ## **Familia de Modelos Claude**
 
-### **Claude 3 Haiku**
+### **Claude 3.5 Haiku**
 
 **Características Principales:**
 ```
@@ -49,7 +49,7 @@ LIMITATIONS:
 - Basic multimodal support
 ```
 
-### **Claude 3 Sonnet**
+### **Claude 3.5 Sonnet**
 
 **Características Principales:**
 ```
@@ -74,7 +74,7 @@ STRENGTHS:
 - Professional communication style
 ```
 
-### **Claude 3 Opus**
+### **Claude Opus 4**
 
 **Características Principales:**
 ```
@@ -505,21 +505,21 @@ FOR PROGRESSIVE DETAIL:
 
 **Modelo Selection Guidelines:**
 ```
-HAIKU (Fastest/Cheapest):
+CLAUDE 3.5 HAIKU (Fastest/Cheapest):
 - Real-time applications
 - High-volume processing
 - Simple Q&A scenarios
 - Basic content generation
 - Routine analysis tasks
 
-SONNET (Balanced):
+CLAUDE 3.5 SONNET (Balanced):
 - Professional content creation
 - Business analysis
 - Code development
 - Research tasks
 - Most general use cases
 
-OPUS (Premium/Highest Quality):
+CLAUDE OPUS 4 (Premium/Highest Quality):
 - Strategic decision support
 - Complex creative projects
 - High-stakes analysis
