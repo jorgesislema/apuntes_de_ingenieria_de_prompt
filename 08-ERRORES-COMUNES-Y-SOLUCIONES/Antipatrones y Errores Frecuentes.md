@@ -383,65 +383,65 @@ Aquí está el análisis que pediste: Los numbers looks good pero hay algunas ar
 
 *Template Ejemplo - Business Analysis:*
 ```
-# [ANÁLISIS TITLE] - [DATE]
+# [TÍTULO DEL ANÁLISIS] - [FECHA]
 
-## 🎯 KEY TAKEAWAYS (Executive Summary)
-- **Bottom Line:** [One sentence summary]
-- **Critical Action:** [Most important next step]
-- **Timeline:** [When action needed]
+## CONCLUSIONES CLAVE (Resumen Ejecutivo)
+- **Conclusión Principal:** [Resumen en una oración]
+- **Acción Crítica:** [Siguiente paso más importante]
+- **Calendario:** [Cuándo se necesita la acción]
 
-## 📊 QUANTIFIED FINDINGS
+## 📊 HALLAZGOS CUANTIFICADOS
 
-### Performance Metrics
-| Metric | Current | Target | Gap | Impact |
+### Métricas de Rendimiento
+| Métrica | Actual | Objetivo | Brecha | Impacto |
 |--------|---------|--------|-----|--------|
-| [Metric 1] | X | Y | Z | $Amount |
+| [Métrica 1] | X | Y | Z | $Monto |
 
-### Trend Analysis
-- **Positive Trends:** [Bulleted list]
-- **Concerning Trends:** [Bulleted list] 
-- **Anomalies:** [Unexpected findings]
+### Análisis de Tendencias
+- **Tendencias Positivas:** [Lista de viñetas]
+- **Tendencias Preocupantes:** [Lista de viñetas] 
+- **Anomalías:** [Hallazgos inesperados]
 
-## 🔍 ROOT CAUSE ANALYSIS
+## 🔍 ANÁLISIS DE CAUSA RAÍZ
 
-### Primary Drivers (>50% impact)
-1. **[Driver Name]:** [Description + Evidence]
+### Impulsores Primarios (>50% impacto)
+1. **[Nombre del Impulsor]:** [Descripción + Evidencia]
 
-### Secondary Factors (20-50% impact)  
-1. **[Factor Name]:** [Description + Evidence]
+### Factores Secundarios (20-50% impacto)  
+1. **[Nombre del Factor]:** [Descripción + Evidencia]
 
-### Contributing Elements (<20% impact)
-- [List of minor contributors]
+### Elementos Contribuyentes (<20% impacto)
+- [Lista de contribuyentes menores]
 
-## 🚀 STRATEGIC RECOMMENDATIONS
+## 🚀 RECOMENDACIONES ESTRATÉGICAS
 
-### Immediate Actions (Next 30 days)
-| Action | Owner | Success Metric | Est. Impact |
+### Acciones Inmediatas (Próximos 30 días)
+| Acción | Responsable | Métrica de Éxito | Impacto Est. |
 |--------|-------|----------------|-------------|
-| [Action 1] | [Name] | [Metric] | [Outcome] |
+| [Acción 1] | [Nombre] | [Métrica] | [Resultado] |
 
-### Medium-term Initiatives (30-90 days)
-[Structured similarly]
+### Iniciativas a Mediano Plazo (30-90 días)
+[Estructurado de manera similar]
 
-### Long-term Strategy (90+ days)
-[Structured similarly]
+### Estrategia a Largo Plazo (90+ días)
+[Estructurado de manera similar]
 
-## ⚠️ RISKS & MITIGATION
-- **Risk:** [Description] → **Mitigation:** [Strategy]
+## ⚠️ RIESGOS Y MITIGACIÓN
+- **Riesgo:** [Descripción] → **Mitigación:** [Estrategia]
 
-## 📈 SUCCESS METRICS & MONITORING
-- **Primary KPI:** [Metric] - Target: [Value] by [Date]
-- **Check-in Schedule:** [Frequency and format]
+## 📈 MÉTRICAS DE ÉXITO Y MONITOREO
+- **KPI Principal:** [Métrica] - Objetivo: [Valor] para [Fecha]
+- **Calendario de Revisión:** [Frecuencia y formato]
 
-## 💰 RESOURCE REQUIREMENTS
-- **Budget:** $[Amount] for [Purpose]
-- **Team:** [Roles and time commitment]
-- **Tools/Systems:** [Requirements]
+## 💰 REQUISITOS DE RECURSOS
+- **Presupuesto:** $[Monto] para [Propósito]
+- **Equipo:** [Roles y compromiso de tiempo]
+- **Herramientas/Sistemas:** [Requisitos]
 
-## 📋 NEXT STEPS
-1. **[Date]:** [Specific action]
-2. **[Date]:** [Specific action]
-3. **[Date]:** [Review checkpoint]
+## 📋 PRÓXIMOS PASOS
+1. **[Fecha]:** [Acción específica]
+2. **[Fecha]:** [Acción específica]
+3. **[Fecha]:** [Punto de revisión]
 ```
 
 **Métricas de Mejora:**
