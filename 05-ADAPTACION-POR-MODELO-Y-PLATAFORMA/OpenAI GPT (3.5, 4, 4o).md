@@ -1,5 +1,5 @@
-# OpenAI GPT (3.5, 4, 4o)
-## Dominando la Familia GPT de OpenAI
+# OpenAI GPT (4o, 4.1, o3, o4-mini)
+## Dominando la Familia GPT de OpenAI (Julio 2026)
 
 ---
 
@@ -9,20 +9,27 @@ Los modelos **GPT (Generative Pre-trained Transformer)** de OpenAI son la serie 
 
 ### **Evolución de la Familia GPT**
 
-**GPT-3.5 Turbo:**
-- Base sólida para prompting general
-- Excelente relación costo-beneficio
-- Ideal para tareas rutinarias y automatización
+**GPT-3.5 Turbo (DEPRECATED):**
+- **Oficialmente deprecado.** Sustituido por GPT-4o mini y modelos más modernos.
+- Solo disponible para aplicaciones legacy que aún no hayan migrado.
+- Base sólida en su momento para prompting general y automatización.
 
-**GPT-4:**
-- Capacidades de razonamiento superiores
-- Mejor comprensión de context complex
-- Ideal para análisis profundo y creatividad
-
-**GPT-4o (Optimized):**
+**GPT-4o (Current Mainstream):**
 - Velocidad mejorada significativamente
 - Multimodalidad (texto, imagen, audio)
+- Contexto de 128K tokens
 - Balance optimal entre capacidad y eficiencia
+
+**GPT-4.1 (Ultra-Long Context):**
+- Contexto de 1M tokens (~750,000 palabras)
+- Optimizado para procesamiento de documentos extensos, repositorios de código completos
+- Ideal para análisis de contratos largos, codebases enteros, research extensivo
+
+**o3 / o4-mini (Reasoning Specialists):**
+- Modelos optimizados para razonamiento profundo (chain-of-thought avanzado)
+- Excelentes en matemáticas, ciencias, programación competitiva
+- o4-mini: Variante compacta y económica para razonamiento como servicio
+- Procesamiento más lento pero significativamente más preciso en tareas complejas
 
 ---
 
@@ -427,22 +434,24 @@ INVESTMENT JUSTIFICATION:
 
 ### **Costo-Beneficio por Modelo**
 
+> **Nota:** Los precios a continuación son aproximados e ilustrativos. Consulta la documentación oficial de OpenAI para tarifas actualizadas.
+
 **Análisis Comparativo:**
 ```
 GPT-3.5 TURBO:
-Cost: ~$0.002/1K tokens
+Cost: ~$0.002/1K tokens (ilustrativo)
 Best for: High-volume, routine tasks
 ROI sweet spot: Automation y basic analysis
 Break-even: 100+ requests/day
 
 GPT-4:
-Cost: ~$0.06/1K tokens (30x more expensive)
+Cost: ~$0.06/1K tokens (30x more expensive, ilustrativo)
 Best for: Complex analysis, strategic work
 ROI sweet spot: High-value insights y decisions
 Break-even: Quality improvement > 30x cost difference
 
 GPT-4o:
-Cost: ~$0.015/1K tokens (7.5x GPT-3.5)
+Cost: ~$0.015/1K tokens (ilustrativo)
 Best for: Balanced performance y cost
 ROI sweet spot: Professional work requiring quality + speed
 Break-even: Need for both quality y efficiency
@@ -582,9 +591,9 @@ STRATEGIC PREPARATION:
 Cada modelo de la familia GPT tiene su sweet spot de aplicación. El arte está en matching the right model al right use case, optimizing for the specific capabilities y constraints de cada versión.
 
 **Strategic Model Selection:**
-- **GPT-3.5**: Scale, automation, cost efficiency
-- **GPT-4**: Complex analysis, strategic work, quality requirements
+- **GPT-4o mini**: Scale, automation, cost efficiency (replacement for GPT-3.5)
 - **GPT-4o**: Balanced performance, multimodal needs, real-time applications
+- **GPT-4.1** / **o3/o4-mini**: Complex analysis, strategic work, advanced reasoning
 
 **Universal Principles:**
 1. **Understand model strengths** y design prompts accordingly
