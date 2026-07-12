@@ -653,7 +653,7 @@ Specificity Score → Expected Output Quality:
 
 ## Futuro de la Especificidad
 
-### **Tendencias 2024-2025:**
+### **Tendencias 2025-2026:**
 
 **1. Dynamic Specificity:**
 IA que pide clarificación automáticamente cuando detecta vagueness.
@@ -716,37 +716,9 @@ Toma un prompt específico de una industria y adáptalo a otra:
 
 ---
 
-## Catálogo de Roles de Alta Fidelidad (Activación de Cúmulos de Conocimiento)
+## Catálogo de Roles de Alta Fidelidad
 
-Esta es una profundización directa de la técnica que llamamos "Inyección de Rol de Alta Fidelidad". El principio es simple: un título profesional específico y real es una "llave" que abre un cofre de conocimiento, tono y vocabulario mucho más preciso que un rol genérico.
-
-Aunque muchos de estos roles tienen nombres en inglés en el mundo global, la IA ha sido entrenada con una inmensa cantidad de texto en español de alta calidad (informes, noticias, tesis, etc.). Usar el título profesional correcto en español es igual de potente.
-
-La clave no es el idioma, sino la especificidad del rol y el contexto profesional que invoca.
-
-### **Catálogo de Activación para Proyectos Profesionales**
-
-| Rol Profesional (en español) | Cuándo Usarlo (Contexto Profesional) | Qué Esperar (Tono, Enfoque y Vocabulario) |
-|------------------------------|---------------------------------------|-------------------------------------------|
-| **Director/a de Estrategia Corporativa** | Cuando necesitas desarrollar un plan de negocio a largo plazo, analizar la entrada a un nuevo mercado o evaluar amenazas competitivas. | **Tono:** Formal, visionario, seguro.<br>**Enfoque:** Crecimiento, posicionamiento, ventaja competitiva, KPIs.<br>**Vocabulario:** "roadmap", "stakeholders", "due diligence", "escalabilidad", "ecosistema". |
-| **Analista Financiero/a Senior** | Para analizar estados de resultados, evaluar la viabilidad de una inversión, crear proyecciones financieras o interpretar datos de mercado. | **Tono:** Objetivo, cuantitativo, escéptico.<br>**Enfoque:** ROI, VAN/TIR, flujo de caja, márgenes, valoración, riesgo.<br>**Vocabulario:** "EBITDA", "apalancamiento", "costo de oportunidad", "análisis de sensibilidad". |
-| **Gerente de Marketing Digital especializado en SEO** | Para crear una estrategia de contenido, optimizar un sitio web para motores de búsqueda o planificar una campaña de link-building. | **Tono:** Práctico, técnico, orientado a la acción.<br>**Enfoque:** Tráfico orgánico, ranking de keywords, "domain authority", tasa de conversión.<br>**Vocabulario:** "intención de búsqueda", "backlinks", "SEO on-page/off-page", "canibalización de keywords". |
-| **Director/a de Talento Humano y Cultura Organizacional** | Para diseñar planes de carrera, crear encuestas de clima laboral, redactar políticas internas o gestionar un proceso de cambio cultural. | **Tono:** Empático, corporativo, motivador.<br>**Enfoque:** Retención de talento, compromiso ("engagement"), desarrollo profesional, bienestar.<br>**Vocabulario:** "evaluación de desempeño", "onboarding", "employer branding", "cultura organizacional". |
-| **Abogado/a Corporativo especializado en Propiedad Intelectual** | Para redactar cláusulas de confidencialidad (NDA), analizar el riesgo de infracción de una marca o explicar las diferencias entre patente y marca registrada. | **Tono:** Preciso, formal, admonitorio.<br>**Enfoque:** Cumplimiento normativo, mitigación de riesgos legales, protección de activos.<br>**Vocabulario:** "jurisprudencia", "cláusula", "propiedad industrial", "derechos de autor", "litigio". |
-| **Jefe/a de Producto (Product Manager) para una App Móvil** | Para definir nuevas funcionalidades ("features"), escribir historias de usuario, priorizar el "backlog" o analizar el feedback de los usuarios. | **Tono:** Centrado en el usuario, colaborativo, analítico.<br>**Enfoque:** Experiencia de Usuario (UX), métricas de producto (retención, DAU), "product-market fit".<br>**Vocabulario:** "roadmap de producto", "sprint", "historias de usuario", "A/B testing", "MVP". |
-| **Periodista de Investigación especializado en Datos** | Para analizar un conjunto de datos públicos, encontrar la historia principal detrás de los números y redactar un artículo objetivo y basado en evidencia. | **Tono:** Investigativo, fáctico, imparcial.<br>**Enfoque:** Verificación de fuentes, visualización de datos, narrativa basada en hechos, interés público.<br>**Vocabulario:** "correlación vs. causalidad", "fuentes primarias", "sesgo de confirmación", "análisis estadístico". |
-
-### **Cómo Descubrir Tus Propios Roles de Alta Fidelidad**
-
-No te limites a esta tabla. Para encontrar el rol perfecto para tu necesidad:
-
-1. **Define tu objetivo final:** ¿Qué quieres conseguir exactamente? (Ej: "Un discurso para convencer a inversores").
-
-2. **Pregúntate:** En tu país o en el mundo hispanohablante, ¿quién es la persona o el tipo de profesional que es absolutamente el mejor haciendo esto? (Ej: "Un emprendedor que haya levantado capital exitosamente, como los fundadores de 'startups' conocidas").
-
-3. **Investiga su cargo exacto:** Busca en noticias o en perfiles de LinkedIn. No es solo "emprendedor", es "Co-Fundador y CEO".
-
-4. **Usa ese rol específico en tu prompt:** "Actúa como el Co-Fundador y CEO de una startup tecnológica que está presentando su ronda de inversión Serie A...". El resultado será drásticamente mejor.
+> **Ampliación disponible en:** [`03-SECRETOS-DEL-MAESTRO/Catálogo de Roles de Alta Fidelidad.md`](../03-SECRETOS-DEL-MAESTRO/Catálogo%20de%20Roles%20de%20Alta%20Fidelidad.md) — Una guía completa con roles detallados por industria, plantillas para crear roles personalizados, y casos de uso avanzados.
 
 ---
 
