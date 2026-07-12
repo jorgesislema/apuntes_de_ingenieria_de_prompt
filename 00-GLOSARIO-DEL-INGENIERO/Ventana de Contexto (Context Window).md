@@ -15,17 +15,19 @@ La ventana de contexto es el número máximo de tokens que un modelo de IA puede
 
 ## Tamaños de Ventana por Modelo
 
-### **Modelos Populares (2024)**
+### **Modelos Populares (2025)**
 
 | Modelo | Ventana de Contexto | Equivalente en Palabras | Páginas Aprox. |
 |--------|---------------------|-------------------------|----------------|
-| GPT-3.5 | 4,096 tokens | ~3,000 palabras | 6 páginas |
-| GPT-4 | 8,192 tokens | ~6,000 palabras | 12 páginas |
-| GPT-4 Turbo | 128,000 tokens | ~96,000 palabras | 200 páginas |
-| Claude 3 Haiku | 200,000 tokens | ~150,000 palabras | 300 páginas |
-| Claude 3 Sonnet | 200,000 tokens | ~150,000 palabras | 300 páginas |
-| Claude 3 Opus | 200,000 tokens | ~150,000 palabras | 300 páginas |
-| Gemini 1.5 Pro | 1,000,000 tokens | ~750,000 palabras | 1,500 páginas |
+| GPT-4o mini | 128,000 tokens | ~96,000 palabras | 200 páginas |
+| GPT-4o | 128,000 tokens | ~96,000 palabras | 200 páginas |
+| GPT-4.1 | 1,000,000 tokens | ~750,000 palabras | 1,500 páginas |
+| Claude 3.5 Haiku | 200,000 tokens | ~150,000 palabras | 300 páginas |
+| Claude 3.5 Sonnet | 200,000 tokens | ~150,000 palabras | 300 páginas |
+| Claude Opus 4 | 200,000 tokens | ~150,000 palabras | 300 páginas |
+| Gemini 2.5 Pro | 1,000,000+ tokens | ~750,000 palabras | 1,500 páginas |
+| Gemini 2.5 Flash | 1,000,000 tokens | ~750,000 palabras | 1,500 páginas |
+| DeepSeek V3 | 128,000 tokens | ~96,000 palabras | 200 páginas |
 
 ---
 
@@ -36,9 +38,9 @@ La ventana de contexto es el número máximo de tokens que un modelo de IA puede
 **Ejemplo Real - Morgan Stanley:**
 ```
 Desafío: Analizar reportes trimestrales de 50 páginas
-Solución con GPT-4 (8K): Dividir en 4 chunks
-Solución con Claude 3 (200K): Procesar completo
-Resultado: Claude 3 mantiene coherencia global
+Solución con GPT-4o (128K): Dividir en 2 chunks o procesar completo
+Solución con Claude 3.5 Sonnet (200K): Procesar completo
+Resultado: Claude 3.5 mantiene coherencia global superior
 ```
 
 ### **2. Afecta la Calidad de Respuestas Largas**
@@ -47,10 +49,10 @@ Resultado: Claude 3 mantiene coherencia global
 
 **Ejemplo práctico:**
 ```
-Conversación larga con GPT-3.5:
+Conversación larga con GPT-4o mini:
 Pregunta 1: "Analiza esta estrategia de marketing"
-[... 20 intercambios después ...]
-Pregunta 21: "¿Cómo se relaciona esto con la estrategia inicial?"
+[... 35 intercambios después ...]
+Pregunta 36: "¿Cómo se relaciona esto con la estrategia inicial?"
 Respuesta: "¿Podrías recordarme cuál era la estrategia inicial?"
 ```
 
@@ -58,12 +60,12 @@ Respuesta: "¿Podrías recordarme cuál era la estrategia inicial?"
 
 **Cálculo de costos:**
 ```
-GPT-4 (8K ventana): $0.03 por 1K tokens input
-Claude 3 (200K ventana): $0.015 por 1K tokens input
+GPT-4o (128K ventana): ~$0.0025 por 1K tokens input
+Claude 3.5 Sonnet (200K ventana): ~$0.003 por 1K tokens input
 
 Para procesar 50K tokens:
-GPT-4: $1.50 (requiere múltiples llamadas)
-Claude 3: $0.75 (una sola llamada)
+GPT-4o: ~$0.125 (procesa en una sola llamada)
+Claude 3.5 Sonnet: ~$0.15 (una sola llamada)
 ```
 
 ---
@@ -158,12 +160,13 @@ Procesamiento:
 
 ## Casos de Uso por Tamaño de Ventana
 
-### **Ventana Pequeña (4K-8K tokens) - GPT-3.5/GPT-4**
+### **Ventana Pequeña (128K tokens) - GPT-4o mini / GPT-4o**
 
 **Ideal para:**
 - Emails y contenido corto
 - Análisis de métricas específicas
 - Respuestas rápidas y directas
+- Procesamiento de documentos medianos
 
 **Ejemplo Salesforce:**
 ```
@@ -174,12 +177,13 @@ Interés: Automatización de pipeline
 Próximo paso: Propuesta comercial"
 ```
 
-### **Ventana Media (32K-128K tokens) - GPT-4 Turbo**
+### **Ventana Media (128K-200K tokens) - GPT-4o / Claude 3.5 Sonnet**
 
 **Ideal para:**
-- Análisis de documentos medianos
-- Conversaciones largas
-- Desarrollo de estrategias
+- Análisis de documentos medianos a grandes
+- Conversaciones extensas
+- Desarrollo de estrategias complejas
+- Revisión de código fuente completo
 
 **Ejemplo Morgan Stanley:**
 ```
@@ -191,12 +195,13 @@ Proporciona:
 3. Recomendación de inversión"
 ```
 
-### **Ventana Grande (200K+ tokens) - Claude 3, Gemini 1.5**
+### **Ventana Grande (200K+ tokens) - Claude 3.5, Gemini 2.5, GPT-4.1**
 
 **Ideal para:**
 - Análisis de códigos completos
 - Revisión de contratos largos
 - Investigación exhaustiva
+- Procesamiento multimodal de documentos extensos
 
 **Ejemplo Legal:**
 ```
@@ -284,8 +289,8 @@ def optimize_for_context(prompt, max_tokens):
 
 **Problema:**
 ```
-Prompt largo enviado a GPT-3.5
-IA procesa solo los primeros 4K tokens
+Prompt extremadamente largo enviado a GPT-4o mini
+IA procesa solo los primeros 128K tokens
 Respuesta incompleta sin avisar
 ```
 
@@ -302,19 +307,21 @@ def validate_context_size(prompt, model_limit):
 
 **Problema:**
 ```
-Usar Claude 3 (200K) para prompts de 1K tokens
+Usar Claude 3.5 Sonnet (200K) para prompts de 1K tokens
 Desperdiciar capacidad de análisis profundo
 ```
 
 **Solución:**
 ```python
 def select_optimal_model(task_complexity, content_size):
-    if content_size > 100000:
-        return "claude-3-sonnet"
+    if content_size > 200000:
+        return "gemini-2.5-pro"
+    elif content_size > 100000:
+        return "claude-3.5-sonnet"
     elif content_size > 30000:
-        return "gpt-4-turbo"
+        return "gpt-4o"
     else:
-        return "gpt-3.5-turbo"
+        return "gpt-4o-mini"
 ```
 
 ### **Error 3: Contexto Degradado**
@@ -344,7 +351,7 @@ def refresh_context_periodically(conversation, threshold=0.8):
 
 **Solución:**
 ```
-Modelo: Claude 3 (200K contexto)
+Modelo: Claude 3.5 Sonnet (200K contexto)
 Estrategia: Mantener historial completo + metadata del cliente
 Resultado: 40% mejora en resolución de primera interacción
 ```
@@ -355,7 +362,7 @@ Resultado: 40% mejora en resolución de primera interacción
 
 **Solución:**
 ```
-Modelo: Gemini 1.5 Pro (1M contexto)
+Modelo: Gemini 2.5 Pro (1M contexto)
 Estrategia: Análisis completo en una sola pasada
 Resultado: Coherencia narrativa mejorada en 60%
 ```
@@ -367,8 +374,8 @@ Resultado: Coherencia narrativa mejorada en 60%
 **Solución:**
 ```
 Modelo híbrido:
-- Claude 3 para análisis completo
-- GPT-4 para síntesis final
+- Claude 3.5 Sonnet para análisis completo
+- GPT-4o para síntesis final
 Resultado: Tiempo de análisis reducido de 8 horas a 30 minutos
 ```
 
@@ -392,12 +399,12 @@ Tipo de documento → Tokens requeridos:
 ```python
 def recommend_model(task_type, content_size):
     recommendations = {
-        "quick_response": "gpt-3.5-turbo",
-        "detailed_analysis": "gpt-4-turbo" if content_size < 100000 else "claude-3-sonnet",
-        "comprehensive_review": "gemini-1.5-pro",
-        "cost_sensitive": "gpt-3.5-turbo"
+        "quick_response": "gpt-4o-mini",
+        "detailed_analysis": "gpt-4o" if content_size < 100000 else "claude-3.5-sonnet",
+        "comprehensive_review": "gemini-2.5-pro",
+        "cost_sensitive": "gpt-4o-mini"
     }
-    return recommendations.get(task_type, "gpt-4-turbo")
+    return recommendations.get(task_type, "gpt-4o")
 ```
 
 ---
