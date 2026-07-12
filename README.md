@@ -30,10 +30,14 @@ En un mundo donde la inteligencia artificial está transformando cada industria,
 ### Técnicas Avanzadas (Para Profesionales)
 - **03-SECRETOS-DEL-MAESTRO** - Las técnicas que no te enseñan en ningún curso
 - **04-PROMPTING-A-ESCALA-EMPRESARIAL** - Cómo las grandes empresas usan prompts
-- **05-ADAPTACION-POR-MODELO-Y-PLATAFORMA** - GPT, Claude, Gemini y más
+- **05-ADAPTACION-POR-MODELO-Y-PLATAFORMA** - GPT, Claude, Gemini, DeepSeek, Llama y más
+- **15-FUNCTION-CALLING-Y-OUTPUT-ESTRUCTURADO** - Function calling, tool use y JSON mode
+
+### Marcos de Decisión
+- **Prompting vs Fine-Tuning vs RAG** - Cuándo usar cada enfoque
 
 ### Preparación Profesional
-- **06-PREPARACION-PARA-ENTREVISTAS** - Más de 300 preguntas reales de entrevistas
+- **06-PREPARACION-PARA-ENTREVISTAS** - Más de 300 preguntas reales de entrevistas y guía de carrera profesional
 - **07-LABORATORIO-Y-EJEMPLOS** - Casos prácticos para experimentar
 - **08-ERRORES-COMUNES-Y-SOLUCIONES** - Aprende de los errores más frecuentes
 
@@ -42,10 +46,19 @@ En un mundo donde la inteligencia artificial está transformando cada industria,
 - **10-FRONTERA-DE-LA-INVESTIGACION** - Lo último en técnicas de prompting
 - **11-LA-MENTALIDAD-DEL-GENIO** - La psicología detrás del prompting exitoso
 
-### Seguridad y Herramientas
+### Seguridad, Herramientas y Producción
 - **12-SEGURIDAD-Y-DEFENSA-DE-PROMPTS** - Protégete de ataques e inyecciones
-- **13-HERRAMIENTAS-DEL-OFICIO** - Las mejores plataformas y herramientas
-- **14-ESTRATEGIAS-DE-ORQUESTACION** - Cuándo usar prompts vs fine-tuning
+- **13-HERRAMIENTAS-DEL-OFICIO** - Las mejores plataformas, APIs, evaluación y prompting para visión
+- **14-ESTRATEGIAS-DE-ORQUESTACION** - Workflows multi-agente y optimización de recursos
+
+### Novedades de Julio 2026 (v2.0)
+- Function Calling y Outputs Estructurados (nuevo módulo)
+- Marco de decisión: Prompting vs Fine-tuning vs RAG
+- Guía de Carrera Profesional (portafolio, freelance, salarios)
+- Proyecto Final Integrador (capstone)
+- Prompting para Visión y Análisis de Imágenes
+- Modelos actualizados a Julio 2026 (GPT-4o, GPT-4.1, Claude 3.5/4, Gemini 2.5 Pro)
+- Esquemas gráficos ASCII en toda la documentación
 
 ---
 
@@ -155,6 +168,14 @@ Este repositorio incluye casos prácticos reales de:
 
 ## Roadmap del Repositorio
 
+### Completado en v2.0:
+- Módulo de Function Calling y Outputs Estructurados
+- Marco de decisión Prompting vs Fine-Tuning vs RAG
+- Guía de Carrera Profesional
+- Proyecto Final Integrador (capstone)
+- Prompting para Visión y Análisis de Imágenes
+- Esquemas gráficos ASCII en toda la documentación
+
 ### Próximas Adiciones:
 - Más ejemplos de empresas latinoamericanas
 - Casos de uso específicos por industria
@@ -163,7 +184,6 @@ Este repositorio incluye casos prácticos reales de:
 - Herramientas de evaluación automática
 
 ### Versiones Futuras:
-- **v2.0**: Integración con APIs de modelos
 - **v3.0**: Plataforma interactiva de aprendizaje
 - **v4.0**: Comunidad de práctica y mentoría
 
@@ -212,6 +232,6 @@ Este repositorio es tu compañero en ese viaje. Úsalo, mejóralo, compártelo.
 
 ---
 
-*Última actualización: Julio 2025*
-*Versión: 1.0*
+*Ultima actualizacion: Julio 2026*
+*Version: 2.0*
 *Contribuidores: Comunidad de Ingenieros de Prompt*
