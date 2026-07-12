@@ -339,7 +339,7 @@ ESTABILIZACIÓN:
 
 **Síntomas:**
 - Excede límites de palabras
-- Ignora constrains de presupuesto/tiempo
+- Ignora restricciones de presupuesto/tiempo
 - No considera limitaciones técnicas
 
 **Solución:**
