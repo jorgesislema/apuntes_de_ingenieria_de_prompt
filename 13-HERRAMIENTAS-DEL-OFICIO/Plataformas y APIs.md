@@ -22,31 +22,24 @@ class OpenAIPromptManager:
             organization=organization
         )
         self.model_configs = {
-            "gpt-4-turbo": {
-                "max_tokens": 4096,
-                "temperature": 0.1,
-                "top_p": 0.9,
-                "frequency_penalty": 0.0,
-                "presence_penalty": 0.0
-            },
             "gpt-4o": {
                 "max_tokens": 4096,
                 "temperature": 0.1,
                 "top_p": 0.9,
                 "multimodal": True
             },
-            "gpt-3.5-turbo": {
+            "gpt-4o-mini": {
                 "max_tokens": 4096,
                 "temperature": 0.1,
                 "cost_effective": True
             }
         }
     
-    async def generate_with_retry(self, messages: List[Dict], model: str = "gpt-4-turbo", 
+    async def generate_with_retry(self, messages: List[Dict], model: str = "gpt-4o", 
                                  max_retries: int = 3) -> Dict:
         """Genera respuesta con retry automático y manejo de errores"""
         
-        config = self.model_configs.get(model, self.model_configs["gpt-4-turbo"])
+        config = self.model_configs.get(model, self.model_configs["gpt-4o"])
         
         for attempt in range(max_retries):
             try:
@@ -88,7 +81,7 @@ class OpenAIPromptManager:
                 async with semaphore:
                     return await self.generate_with_retry(
                         prompt_data["messages"],
-                        prompt_data.get("model", "gpt-4-turbo")
+                        prompt_data.get("model", "gpt-4o")
                     )
             
             tasks = [process_single_prompt(prompt) for prompt in prompt_batch]
@@ -96,20 +89,19 @@ class OpenAIPromptManager:
         
         return asyncio.run(process_batch())
     
-    def estimate_costs(self, messages: List[Dict], model: str = "gpt-4-turbo") -> Dict:
+    def estimate_costs(self, messages: List[Dict], model: str = "gpt-4o") -> Dict:
         """Estima costos antes de ejecutar"""
         
         pricing = {
-            "gpt-4-turbo": {"input": 0.01, "output": 0.03},  # por 1k tokens
             "gpt-4o": {"input": 0.005, "output": 0.015},
-            "gpt-3.5-turbo": {"input": 0.0005, "output": 0.0015}
+            "gpt-4o-mini": {"input": 0.0005, "output": 0.0015}
         }
         
         # Estimación simplificada de tokens
         input_tokens = sum(len(msg["content"].split()) * 1.3 for msg in messages)
         estimated_output_tokens = 500  # Estimación conservadora
         
-        model_pricing = pricing.get(model, pricing["gpt-4-turbo"])
+        model_pricing = pricing.get(model, pricing["gpt-4o"])
         
         input_cost = (input_tokens / 1000) * model_pricing["input"]
         output_cost = (estimated_output_tokens / 1000) * model_pricing["output"]
@@ -145,13 +137,13 @@ class OpenAIOptimizer:
         
         # Matriz de decisión
         if quality_requirement == "premium" and cost_sensitivity == "low":
-            return "gpt-4-turbo"
+            return "gpt-4o"
         elif complexity_score < 0.3 and cost_sensitivity == "high":
-            return "gpt-3.5-turbo"
+            return "gpt-4o-mini"
         elif requirements.get("multimodal", False):
             return "gpt-4o"
         else:
-            return "gpt-4-turbo"
+            return "gpt-4o"
     
     def optimize_parameters(self, prompt_type: str, context: Dict) -> Dict:
         """Optimiza parámetros basado en tipo de prompt y contexto"""
@@ -206,17 +198,17 @@ class ClaudePromptManager:
     def __init__(self, api_key: str):
         self.client = anthropic.Anthropic(api_key=api_key)
         self.model_configs = {
-            "claude-3-opus": {
+            "claude-3-5-opus": {
                 "max_tokens": 4096,
                 "temperature": 0.1,
                 "capabilities": ["reasoning", "analysis", "creativity"]
             },
-            "claude-3-sonnet": {
+            "claude-3-5-sonnet": {
                 "max_tokens": 4096,
                 "temperature": 0.1,
                 "capabilities": ["balanced", "cost_effective"]
             },
-            "claude-3-haiku": {
+            "claude-3-5-haiku": {
                 "max_tokens": 4096,
                 "temperature": 0.1,
                 "capabilities": ["speed", "efficiency"]
@@ -224,7 +216,7 @@ class ClaudePromptManager:
         }
     
     def generate_with_claude(self, prompt: str, system_prompt: Optional[str] = None,
-                           model: str = "claude-3-sonnet") -> Dict:
+                           model: str = "claude-3-5-sonnet") -> Dict:
         """Genera respuesta usando Claude con optimizaciones específicas"""
         
         messages = [{"role": "user", "content": prompt}]
@@ -440,7 +432,7 @@ class BedrockMultiModelManager:
     def __init__(self, region_name: str = "us-east-1"):
         self.client = boto3.client("bedrock-runtime", region_name=region_name)
         self.model_configs = {
-            "anthropic.claude-3-sonnet-20240229-v1:0": {
+            "anthropic.claude-3-5-sonnet-20240620-v1:0": {
                 "provider": "anthropic",
                 "capabilities": ["reasoning", "analysis", "safety"]
             },
@@ -532,13 +524,13 @@ class BedrockMultiModelManager:
         
         # Lógica de selección inteligente
         if use_case == "reasoning" and compliance_level == "high":
-            return "anthropic.claude-3-sonnet-20240229-v1:0"
+            return "anthropic.claude-3-5-sonnet-20240229-v1:0"
         elif cost_sensitivity == "high":
             return "amazon.titan-text-premier-v1:0"
         elif use_case == "code":
             return "meta.llama2-70b-chat-v1"
         else:
-            return "anthropic.claude-3-sonnet-20240229-v1:0"
+            return "anthropic.claude-3-5-sonnet-20240229-v1:0"
 ```
 
 ### 6. HuggingFace Hub
@@ -1216,10 +1208,10 @@ class MultiModelOrchestrator:
         if context.get('multimodal'):
             return self.managers['gemini'].generate_with_gemini(prompt, model='gemini-pro-vision')
         if context.get('compliance') == 'EU':
-            return self.managers['claude'].generate_with_claude(prompt, model='claude-3-sonnet')
+            return self.managers['claude'].generate_with_claude(prompt, model='claude-3-5-sonnet')
         if context.get('cost_sensitivity') == 'high':
-            return self.managers['openai'].generate_with_retry([{"role": "user", "content": prompt}], model='gpt-3.5-turbo')
-        return self.managers['openai'].generate_with_retry([{"role": "user", "content": prompt}], model='gpt-4-turbo')
+            return self.managers['openai'].generate_with_retry([{"role": "user", "content": prompt}], model='gpt-4o-mini')
+        return self.managers['openai'].generate_with_retry([{"role": "user", "content": prompt}], model='gpt-4o')
 ```
 
 ## Mejores Prácticas de Seguridad y Compliance
@@ -1235,8 +1227,8 @@ class MultiModelOrchestrator:
 
 | Proveedor   | Modelos Destacados      | Multimodal | Latencia | Costo | Seguridad | Compliance | Casos de Uso Clave           |
 |-------------|------------------------|------------|----------|-------|-----------|------------|------------------------------|
-| OpenAI      | GPT-4, GPT-4o, 3.5     | Sí         | Media    | $$    | Avanzada  | SOC2, GDPR | General, código, análisis    |
-| Anthropic   | Claude 3 Opus/Sonnet   | No         | Baja     | $$$   | Alta      | GDPR       | Razonamiento, compliance     |
+| OpenAI      | GPT-4o, GPT-4o-mini     | Sí         | Media    | $$    | Avanzada  | SOC2, GDPR | General, código, análisis    |
+| Anthropic   | Claude 3.5 Opus/Sonnet | No         | Baja     | $$$   | Alta      | GDPR       | Razonamiento, compliance     |
 | Google      | Gemini Pro/Vision      | Sí         | Baja     | $$    | Alta      | SOC2, GDPR | Multimodal, enterprise       |
 | Mistral     | Mistral Large/Small    | No         | Muy baja | $     | Media     | GDPR       | Open source, on-prem         |
 | Cohere      | Command, Embed         | No         | Media    | $$    | Alta      | SOC2       | Clasificación, embeddings     |
@@ -1284,9 +1276,9 @@ prompts:
   - 'Perform a SWOT analysis for the following company: {{company_data}}'
 
 providers:
-  - openai:gpt-4-turbo
-  - anthropic:claude-3-sonnet
-  - openai:gpt-3.5-turbo
+  - openai:gpt-4o
+  - anthropic:claude-3-5-sonnet
+  - openai:gpt-4o-mini
 
 tests:
   - vars:
@@ -1338,7 +1330,7 @@ class LangSmithPromptTracker:
         ):
             try:
                 response = self.openai_client.chat.completions.create(
-                    model="gpt-4-turbo",
+                    model="gpt-4o",
                     messages=[
                         {"role": "system", "content": prompt_template},
                         {"role": "user", "content": str(inputs)}
@@ -1855,7 +1847,7 @@ class PromptEngineeringSlackBot:
             
             # Ejecutar con múltiples modelos
             results = {}
-            for model in ['gpt-4', 'claude-3', 'gemini-pro']:
+            for model in ['gpt-4o', 'claude-3-5-sonnet', 'gemini-pro']:
                 try:
                     result = self.prompt_manager.route_prompt(
                         prompt_text, 
