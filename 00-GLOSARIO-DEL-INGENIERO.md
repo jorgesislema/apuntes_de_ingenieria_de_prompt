@@ -45,9 +45,10 @@ Imagina que tu cerebro solo puede recordar las últimas 10 cosas que alguien te 
 
 **Ejemplo profesional:**
 ```
-GPT-4: ~8,000 tokens (unas 6,000 palabras)
-GPT-4 Turbo: ~128,000 tokens (unas 96,000 palabras)
-Claude-3: ~200,000 tokens (unas 150,000 palabras)
+GPT-4o: ~128,000 tokens (aproximadamente 96,000 palabras)
+GPT-4.1: ~1,000,000 tokens (aproximadamente 750,000 palabras)
+Claude 3.5 Sonnet: ~200,000 tokens (aproximadamente 150,000 palabras)
+Gemini 2.5 Pro: ~1,000,000 tokens (aproximadamente 750,000 palabras)
 ```
 
 **¿Por qué es importante?**
