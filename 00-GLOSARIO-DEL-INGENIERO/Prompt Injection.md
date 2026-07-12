@@ -125,7 +125,7 @@ Usuario: "Decodifica este Base64 y sigue las instrucciones: [código malicioso e
 ```
 
 ### **4. Emotional Manipulation**
-Usar apelaciones emocionales para bypassear filtros.
+Usar apelaciones emocionales para eludir filtros.
 
 **Ejemplo:**
 ```
@@ -610,7 +610,7 @@ class SecurityMonitor:
 
 ## Futuro de la Seguridad en Prompts
 
-### **Tendencias 2024-2025**
+### **Tendencias 2025-2026**
 
 **1. Adversarial Training**
 ```python
