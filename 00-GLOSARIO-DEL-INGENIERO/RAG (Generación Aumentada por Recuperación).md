@@ -772,7 +772,7 @@ class ProductionRAG:
 
 ## Futuro del RAG
 
-### **Tendencias 2024-2025**
+### **Tendencias 2025-2026**
 
 **1. Multi-modal RAG**
 ```
