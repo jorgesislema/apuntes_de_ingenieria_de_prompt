@@ -43,9 +43,9 @@ Cuenta: 7 tokens
 ### **1. Costo Directo**
 **Analogía:** Es como el taxímetro. Cada token es un "kilómetro" que pagas.
 
-**Ejemplo real de OpenAI GPT-4:**
-- Entrada: $0.03 por 1,000 tokens
-- Salida: $0.06 por 1,000 tokens
+**Ejemplo real de OpenAI GPT-4o (Julio 2026, ilustrativo):**
+- Entrada: ~$2.50 por 1,000,000 tokens (~$0.0025 por 1K tokens)
+- Salida: ~$10.00 por 1,000,000 tokens (~$0.01 por 1K tokens)
 
 **Cálculo práctico:**
 ```
@@ -61,9 +61,23 @@ Costo: $0.0195 (menos de 2 centavos)
 - GPT-3.5: 4,096 tokens (~3,000 palabras)
 - GPT-4: 8,192 tokens (~6,000 palabras)
 - GPT-4 Turbo: 128,000 tokens (~100,000 palabras)
-- Claude 3: 200,000 tokens (~150,000 palabras)
+- Claude 3.5: 200,000 tokens (~150,000 palabras)
 
-### **3. Velocidad de Procesamiento**
+### **4. Precios Actuales por Modelo (Julio 2026, Ilustrativos)**
+
+| Modelo | Input (por 1M tokens) | Output (por 1M tokens) | Caso de uso típico |
+|--------|----------------------|------------------------|---------------------|
+| GPT-4o | ~$2.50 | ~$10.00 | Análisis general, tareas profesionales |
+| GPT-4o mini | ~$0.15 | ~$0.60 | Automatización, alto volumen, bajo costo |
+| GPT-4.1 | ~$2.00 | ~$8.00 | Contexto ultra-largo (1M tokens) |
+| Claude 3.5 Sonnet | ~$3.00 | ~$15.00 | Razonamiento profundo, código |
+| Claude 3.5 Haiku | ~$0.80 | ~$4.00 | Rápido, económico, tareas simples |
+| Gemini 2.5 Flash | ~$0.075 | ~$0.30 | Extremadamente barato, alto volumen |
+| DeepSeek V3 | ~$0.27 | ~$1.10 | Open source competitivo |
+
+> **Nota:** Estos precios son aproximados e ilustrativos. Consulta la documentación oficial de cada proveedor para tarifas actualizadas.
+
+### **5. Velocidad de Procesamiento**
 **Analogía:** Es como leer - entre más palabras, más tiempo necesitas.
 
 **Impacto real:**
@@ -182,10 +196,10 @@ Costo por reporte: ~$0.41
 
 **Solución:**
 ```python
-# Mal: Enviar todo el documento
+# MAL: Enviar todo el documento
 prompt = f"Analiza este documento: {documento_completo}"
 
-# Bien: Enviar solo lo relevante
+# BIEN: Enviar solo lo relevante
 prompt = f"Analiza estas métricas clave: {métricas_extraídas}"
 ```
 
