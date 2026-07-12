@@ -293,7 +293,7 @@ Resultado: Respuestas verbosas innecesariamente
 
 ## El Futuro del RLHF
 
-### **Tendencias 2024-2025**
+### **Tendencias 2025-2026**
 
 **1. RLHF Automatizado**
 - AI evaluando AI con supervisión humana
