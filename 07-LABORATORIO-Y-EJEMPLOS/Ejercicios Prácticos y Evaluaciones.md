@@ -8,6 +8,117 @@ Esta colección de ejercicios prácticos está diseñada para desarrollar y eval
 
 ## Nivel Principiante: Fundamentos
 
+### Ejercicio 0a: Tu Primer Prompt
+
+**Objetivo:** Perder el miedo a la IA y experimentar lo que un buen prompt puede lograr.
+
+**Escenario:** Nunca has escrito un prompt en tu vida. Quieres ver de lo que es capaz ChatGPT con una instrucción clara.
+
+**Tarea:** Abre ChatGPT, Copilot o Gemini. Escribe el siguiente prompt:
+
+```
+Explícame qué es la fotosíntesis como si yo tuviera 10 años. Usa una analogía simple, sin palabras difíciles. Dame un ejemplo que pueda ver en mi vida diaria.
+```
+
+**Después de recibir la respuesta, reflexiona:**
+1. ¿Qué hizo diferente la IA al pedirle que te lo explicara "como si tuvieras 10 años"?
+2. ¿La analogía que usó te ayudó a entender mejor?
+3. ¿Qué pasaría si solo hubieras escrito "Qué es la fotosíntesis"?
+
+**Variante para practicar:** Cambia el tema a "cómo funciona internet", "qué es la inflación" o "cómo vuelan los aviones". Prueba con diferentes edades: "como si tuviera 6 años" vs "como si tuviera 15 años". ¿Notas la diferencia en el nivel de detalle?
+
+**Criterios de Evaluación:**
+- **Ejecución correcta (50%):** ¿Escribiste el prompt completo tal como se indica?
+- **Observación (30%):** ¿Identificaste cómo cambió la respuesta al especificar la edad?
+- **Experimentación (20%):** ¿Probaste con diferentes temas y edades?
+
+---
+
+### Ejercicio 0b: Mejorando un Prompt Básico
+
+**Objetivo:** Aprender a transformar un prompt vago en un prompt específico y efectivo usando persona + contexto + instrucción.
+
+**Escenario:** Un amigo te pidió ayuda porque la IA le da respuestas malas. Te muestra el prompt que usó:
+
+```
+Dime cómo hacer ejercicio
+```
+
+**Tarea Paso a Paso:**
+
+1. **Analiza lo que está mal:** ¿Qué información le falta a este prompt? ¿Por qué la respuesta será genérica e inútil?
+
+2. **Crea tu versión mejorada:** Reescribe el prompt aplicando la fórmula PERSONA + CONTEXTO + INSTRUCCIÓN. Piensa en:
+   - PERSONA: ¿Qué experto debería actuar la IA? (entrenador personal, fisioterapeuta, nutriologo...)
+   - CONTEXTO: ¿Para quién es el ejercicio? ¿Hay limitaciones? ¿Qué equipo disponible?
+   - INSTRUCCIÓN: ¿Qué formato quieres? ¿Semanal? ¿Con explicaciones? ¿Cuántos ejercicios?
+
+3. **Compara resultados:** Ejecuta ambos prompts (el malo y tu versión mejorada) en ChatGPT. Compara las respuestas lado a lado.
+
+**Ejemplo de cómo podría quedar tu prompt mejorado:**
+```
+Actúa como un entrenador personal certificado. Tengo 35 años, trabajo en oficina 9 horas al día sentado, no he hecho ejercicio en 2 años y tengo dolor de espalda ocasional. Solo tengo 30 minutos al día y no tengo equipo de gimnasio, solo una colchoneta en casa.
+
+Dame un plan de ejercicios para 3 días a la semana que:
+- Pueda hacer en 30 minutos sin equipo
+- Incluya ejercicios para fortalecer la espalda
+- Tenga ejercicios para principiantes absolutos
+- Incluya calentamiento y estiramiento
+- Me expliques cada ejercicio paso a paso como si nunca lo hubiera hecho
+```
+
+**Entregables:**
+1. El prompt malo original
+2. Tu prompt mejorado (marcando PERSONA, CONTEXTO e INSTRUCCIÓN)
+3. Las respuestas de ambos prompts
+4. Una breve reflexión: ¿cuál fue la diferencia más grande entre las dos respuestas?
+
+**Criterios de Evaluación:**
+- **Diagnóstico del prompt malo (20%):** ¿Identificaste correctamente qué le faltaba?
+- **Construcción de persona (25%):** ¿El rol es específico y relevante?
+- **Construcción de contexto (25%):** ¿Diste información concreta y útil?
+- **Precisión de la instrucción (30%):** ¿Las instrucciones son claras, específicas y generan una respuesta accionable?
+
+---
+
+### Ejercicio 0c: El Poder del Rol
+
+**Objetivo:** Descubrir cómo el mismo tema se transforma completamente cuando cambias el rol o persona de la IA.
+
+**Escenario:** Necesitas explicarle a tu jefe por qué es importante que la empresa invierta en ciberseguridad. Pero primero quieres ver cómo abordarían el tema diferentes expertos para decidir qué enfoque usar.
+
+**Tarea:** Escribe 3 prompts diferentes. Todos preguntan lo mismo en esencia ("por qué una empresa debe invertir en ciberseguridad"), pero cada uno pide a la IA que actúe desde un rol profesional diferente:
+
+**Prompt 1 - El Técnico:**
+Pide a la IA que actúe como un Ingeniero en Ciberseguridad con 15 años de experiencia. Su respuesta debe enfocarse en riesgos técnicos, tipos de ataques y consecuencias operativas.
+
+**Prompt 2 - El Financiero:**
+Pide a la IA que actúe como un Director Financiero (CFO). Su respuesta debe enfocarse en costos de un ataque, retorno de inversión de la ciberseguridad y métricas financieras.
+
+**Prompt 3 - El Legal:**
+Pide a la IA que actúe como un Abogado especializado en protección de datos. Su respuesta debe enfocarse en leyes, multas, demandas y responsabilidad legal.
+
+**Después de obtener las 3 respuestas, reflexiona:**
+1. ¿Qué información dio cada rol que los otros no mencionaron?
+2. ¿Cuál de los 3 enfoques sería más efectivo para convencer a tu jefe? ¿Por qué?
+3. ¿Qué rol elegirías si tu audiencia fuera el departamento de TI en lugar del jefe?
+4. ¿Qué aprendiste sobre el poder de definir una PERSONA en tus prompts?
+
+**Desafío adicional:** Intenta un cuarto prompt donde la IA actúe como un "periodista de tecnología explicando el tema a lectores no técnicos". ¿Cómo cambia el lenguaje y los ejemplos?
+
+**Entregables:**
+1. Los 3 prompts completos que escribiste
+2. Un resumen de 2-3 líneas de cada respuesta obtenida
+3. Tu reflexión respondiendo las 4 preguntas
+
+**Criterios de Evaluación:**
+- **Diversidad de roles (25%):** ¿Los 3 roles cubren perspectivas claramente diferentes?
+- **Contexto en cada prompt (25%):** ¿Cada prompt guía a la IA hacia la perspectiva correcta?
+- **Análisis comparativo (25%):** ¿Identificaste las diferencias clave entre las respuestas?
+- **Reflexión estratégica (25%):** ¿Entendiste cómo elegir el rol según tu audiencia objetivo?
+
+---
+
 ### Ejercicio 1: Construcción de Prompts Básicos
 
 **Objetivo:** Dominar la estructura fundamental de un prompt efectivo.
