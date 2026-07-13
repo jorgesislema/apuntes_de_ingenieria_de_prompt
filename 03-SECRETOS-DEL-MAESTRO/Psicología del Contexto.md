@@ -258,7 +258,7 @@ Mantén de la conversación previa solo:
 
 **Palabras que activan creatividad:**
 - "Genera alternativas innovadoras"
-- "Piensa outside the box"
+- "Piensa fuera de lo convencional"
 - "Propón soluciones no convencionales"
 
 **Palabras que activan precisión:**
@@ -448,4 +448,4 @@ La psicología del contexto es la diferencia entre usar la IA como una herramien
 
 **Principio clave:** El contexto no es solo información; es la arquitectura sobre la cual la IA construye su comprensión de tu problema y su abordaje para resolverlo.
 
-**Tu competitive advantage:** La capacidad de proporcionar contexto que active exactamente el tipo de procesamiento que necesitas para tu objetivo específico.
+**Tu ventaja competitiva:** La capacidad de proporcionar contexto que active exactamente el tipo de procesamiento que necesitas para tu objetivo específico.
