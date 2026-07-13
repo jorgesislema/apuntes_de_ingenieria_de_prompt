@@ -586,20 +586,20 @@ STRATEGIC PREPARATION:
 
 ---
 
-## **Resumen: Mastering the GPT Ecosystem**
+## **Resumen: Dominando el Ecosistema GPT**
 
-Cada modelo de la familia GPT tiene su sweet spot de aplicación. El arte está en matching the right model al right use case, optimizing for the specific capabilities y constraints de cada versión.
+Cada modelo de la familia GPT tiene su punto óptimo de aplicación. El arte está en emparejar el modelo correcto con el caso de uso correcto, optimizando para las capacidades y restricciones específicas de cada versión.
 
-**Strategic Model Selection:**
-- **GPT-4o mini**: Scale, automation, cost efficiency (replacement for GPT-3.5)
-- **GPT-4o**: Balanced performance, multimodal needs, real-time applications
-- **GPT-4.1** / **o3/o4-mini**: Complex analysis, strategic work, advanced reasoning
+**Selección Estratégica de Modelos:**
+- **GPT-4o mini**: Escala, automatización, eficiencia de costos (reemplazo de GPT-3.5)
+- **GPT-4o**: Rendimiento balanceado, necesidades multimodales, aplicaciones en tiempo real
+- **GPT-4.1** / **o3/o4-mini**: Análisis complejo, trabajo estratégico, razonamiento avanzado
 
-**Universal Principles:**
-1. **Understand model strengths** y design prompts accordingly
-2. **Optimize for cost-effectiveness** basado en value delivered
-3. **Plan for evolution** con forward-compatible approaches
-4. **Measure performance** específico to model capabilities
-5. **Invest en transferable skills** que work across models
+**Principios Universales:**
+1. **Entender las fortalezas del modelo** y diseñar prompts en consecuencia
+2. **Optimizar la relación costo-efectividad** basado en valor entregado
+3. **Planificar la evolución** con enfoques compatibles hacia adelante
+4. **Medir el rendimiento** específico a las capacidades del modelo
+5. **Invertir en habilidades transferibles** que funcionen entre modelos
 
-**Tu competitive advantage:** La capacidad de extract maximum value de cada model variant, knowing exactly cuándo y cómo usar cada tool en el GPT arsenal para achieve optimal results.
+**Tu ventaja competitiva:** La capacidad de extraer el máximo valor de cada variante de modelo, sabiendo exactamente cuándo y cómo usar cada herramienta en el arsenal GPT para lograr resultados óptimos.
