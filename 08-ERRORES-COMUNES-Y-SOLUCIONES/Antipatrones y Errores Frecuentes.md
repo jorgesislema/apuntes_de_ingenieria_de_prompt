@@ -247,17 +247,17 @@ Market conditions: Increased competition desde Q2 2024
 ```
 
 **Variables No Consideradas:**
-- Seasonality patterns
-- Competitor launches
-- Economic indicators
-- Internal changes (pricing, team, product)
-- External factors (regulation, supply chain)
+- Patrones de estacionalidad
+- Lanzamientos de competidores
+- Indicadores económicos
+- Cambios internos (precios, equipo, producto)
+- Factores externos (regulación, cadena de suministro)
 
 **Síntomas:**
 - Análisis que no explican la realidad
-- Missing de causal factors importantes
-- Recomendaciones que ignoran constraints críticos
-- Frustración por lack of actionable insights
+- Falta de factores causales importantes
+- Recomendaciones que ignoran restricciones críticas
+- Frustración por falta de información procesable
 
 **Solución: Variable Mapping Framework**
 
@@ -366,7 +366,7 @@ Resource Requirements: [Team, budget, tools needed]
 
 ### Antipatrón 7: "El Formato Caótico"
 
-**Descripción:** Outputs sin estructura clara que dificultan comprension y action-taking.
+**Descripción:** Salidas sin estructura clara que dificultan la comprensión y la acción.
 
 **Ejemplo Problemático:**
 ```
@@ -374,10 +374,10 @@ Aquí está el análisis que pediste: Los numbers looks good pero hay algunas ar
 ```
 
 **Problemas:**
-- Stream of consciousness sin structure
-- Mix de niveles de información
-- Difficult to extract key points
-- No clear hierarchy of importance
+- Flujo de conciencia sin estructura
+- Mezcla de niveles de información
+- Difícil extraer puntos clave
+- Sin jerarquía clara de importancia
 
 **Solución: Structured Output Templates**
 
@@ -739,4 +739,4 @@ Output: Process guidance, additional data requirements, preliminary observations
 
 ---
 
-*El dominio de estos antipatrones y sus soluciones es fundamental para developing prompts que no solo funcionen, sino que funcionen consistently en production environments.*
+*El dominio de estos antipatrones y sus soluciones es fundamental para desarrollar prompts que no solo funcionen, sino que funcionen consistentemente en entornos de producción.*
