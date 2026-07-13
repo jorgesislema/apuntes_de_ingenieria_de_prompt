@@ -512,12 +512,12 @@ Los patrones de comunicación avanzados son el difference maker entre users casu
 
 **Principio fundamental:** La IA responde mejor a patrones de comunicación que reflejan cómo los experts humanos estructuran su pensamiento.
 
-**Tu evolution path:** 
+**Tu camino de evolución:** 
 1. **Domina** los patrones básicos
 2. **Adapta** patrones a tu dominio específico
-3. **Crea** nuevos patrones basados en tu expertise
-4. **Enseña** y refina patrones con tu team
+3. **Crea** nuevos patrones basados en tu experiencia
+4. **Enseña** y refina patrones con tu equipo
 
-**El secreto maestro:** Los mejores communicators no solo usan patrones existentes; crean nuevos patrones que become industry standards.
+**El secreto maestro:** Los mejores comunicadores no solo usan patrones existentes; crean nuevos patrones que se convierten en estándares de la industria.
 
-**Tu competitive advantage:** La capacidad de comunicarte con IA tan efectivamente que others piensan que tienes access to better technology, cuando really tienes better communication skills.
+**Tu ventaja competitiva:** La capacidad de comunicarte con la IA tan efectivamente que otros piensan que tienes acceso a mejor tecnología, cuando en realidad tienes mejores habilidades de comunicación.
