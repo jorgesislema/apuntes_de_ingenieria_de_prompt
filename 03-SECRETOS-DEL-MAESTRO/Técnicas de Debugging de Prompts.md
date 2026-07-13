@@ -497,6 +497,6 @@ El debugging de prompts no es solo problem-solving; es una disciplina sistemáti
 3. **Crea frameworks reutilizables** para debugging futuro
 4. **Maximiza ROI** de tiempo invertido en prompting
 
-**Key insight:** Los mejores prompt engineers no son los que nunca tienen problemas; son los que los diagnostican y resuelven más rápido.
+**Idea clave:** Los mejores ingenieros de prompts no son los que nunca tienen problemas; son los que los diagnostican y resuelven más rápido.
 
-**Tu competitive advantage:** La capacidad de transform problemas de prompting en oportunidades de optimization y learning sistemático.
+**Tu ventaja competitiva:** La capacidad de transformar problemas de prompting en oportunidades de optimización y aprendizaje sistemático.
