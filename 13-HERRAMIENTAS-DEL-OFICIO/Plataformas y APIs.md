@@ -253,7 +253,7 @@ Please follow these constitutional principles when responding:
 
 {constitution}
 
-Now, please respond to the following request while adhering to these principles:
+Ahora, por favor responde a la siguiente solicitud siguiendo estos principios:
 
 {base_prompt}
 """
