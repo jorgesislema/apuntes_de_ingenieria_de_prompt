@@ -199,7 +199,7 @@ REAL-TIME CAPABILITIES:
 
 REAL-TIME ANALYSIS PROMPTS:
 ```
-Como Real-Time Intelligence Analyst con access to current information,
+Como Analista de Inteligencia en Tiempo Real con acceso a información actualizada,
 
 ANALYSIS REQUEST:
 [TOPIC_REQUIRING_CURRENT_DATA]
@@ -415,7 +415,7 @@ MULTIMODAL OUTPUT:
 ```
 KNOWLEDGE-ENHANCED PROMPTING:
 ```
-Como Research Analyst con access to comprehensive information resources,
+Como Analista de Investigación con acceso a recursos de información completos,
 
 RESEARCH SYNTHESIS REQUEST:
 Topic: [RESEARCH_TOPIC]
@@ -785,4 +785,4 @@ Gemini represents Google's vision of AI that understands y operates across multi
 - Advanced visual y code capabilities
 - Enterprise-ready scalability
 
-**Tu strategic advantage:** Leveraging Gemini's unique multimodal y integration capabilities para create solutions que seamlessly blend different types of information y leverage Google's comprehensive ecosystem para maximum productivity y insight generation.
+**Tu ventaja estratégica:** Aprovechar las capacidades multimodales y de integración únicas de Gemini para crear soluciones que combinen sin problemas diferentes tipos de información y aprovechen el ecosistema integral de Google para máxima productividad y generación de perspectivas.
