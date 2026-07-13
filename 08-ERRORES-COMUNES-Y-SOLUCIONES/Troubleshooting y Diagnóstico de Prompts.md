@@ -1,595 +1,595 @@
-# Troubleshooting y Diagnóstico de Prompts
+# Resolución de Problemas y Diagnóstico de Prompts
 
 ## Introducción
 
-Esta guía sistemática para troubleshooting prompts está basada en metodologías de ingeniería de software aplicadas específicamente a prompt engineering. Proporciona frameworks estructurados para diagnosticar, aislar y resolver problemas de prompts en entornos de producción.
+Esta guía sistemática para la resolución de problemas de prompts está basada en metodologías de ingeniería de software aplicadas específicamente a la ingeniería de prompts. Proporciona marcos estructurados para diagnosticar, aislar y resolver problemas de prompts en entornos de producción.
 
 ---
 
-## Framework de Diagnóstico Sistemático
+## Marco de Diagnóstico Sistemático
 
-### Metodología de 5 Layers
+### Metodología de 5 Capas
 
-**Layer 1: Symptom Analysis (¿Qué está pasando?)**
-**Layer 2: Input Validation (¿El problema está en los datos?)**
-**Layer 3: Logic Validation (¿El prompt está bien diseñado?)**
-**Layer 4: Context Analysis (¿Hay factores externos?)**
-**Layer 5: Output Validation (¿El resultado es correcto pero no útil?)**
+**Capa 1: Análisis de Síntomas (¿Qué está pasando?)**
+**Capa 2: Validación de Entrada (¿El problema está en los datos?)**
+**Capa 3: Validación de Lógica (¿El prompt está bien diseñado?)**
+**Capa 4: Análisis de Contexto (¿Hay factores externos?)**
+**Capa 5: Validación de Salida (¿El resultado es correcto pero no útil?)**
 
 ---
 
-## Layer 1: Symptom Analysis
+## Capa 1: Análisis de Síntomas
 
-### Diagnostic Questions Framework
+### Marco de Preguntas de Diagnóstico
 
-**1.1 Output Quality Issues**
+**1.1 Problemas de Calidad de Salida**
 
-¿Cuál es exactamente el problema con el output?
+¿Cuál es exactamente el problema con la salida?
 
-**Checklist de Síntomas:**
-- [ ] **Inconsistencia:** Outputs diferentes para inputs similares
-- [ ] **Incompletitud:** Missing información esperada
-- [ ] **Irrelevancia:** Output correcto pero no útil para el caso
-- [ ] **Incorrectitud:** Facts or logic errors detectables
-- [ ] **Formato:** Structure no cumple especificaciones
-- [ ] **Tono:** Style inapropiado para el contexto
+**Lista de Síntomas:**
+- [ ] **Inconsistencia:** Salidas diferentes para entradas similares
+- [ ] **Incompletitud:** Falta información esperada
+- [ ] **Irrelevancia:** Salida correcta pero no útil para el caso
+- [ ] **Incorrectitud:** Errores de hechos o lógica detectables
+- [ ] **Formato:** Estructura no cumple especificaciones
+- [ ] **Tono:** Estilo inapropiado para el contexto
 
-**Diagnostic Script:**
+**Script de Diagnóstico:**
 ```
-# SYMPTOM CHARACTERIZATION TEMPLATE
+# PLANTILLA DE CARACTERIZACIÓN DE SÍNTOMAS
 
-## Issue Description
-**Primary Symptom:** [Specific description]
-**Frequency:** [Always/Sometimes/Rarely] - [X]% of executions
-**User Impact:** [Blocks workflow/Requires manual fix/Minor inconvenience]
-**Business Impact:** [High/Medium/Low] - [Quantified if possible]
+## Descripción del Problema
+**Síntoma Principal:** [Descripción específica]
+**Frecuencia:** [Siempre/A veces/Raramente] - [X]% de ejecuciones
+**Impacto en Usuario:** [Bloquea flujo de trabajo/Requiere corrección manual/Molestia menor]
+**Impacto en Negocio:** [Alto/Medio/Bajo] - [Cuantificado si es posible]
 
-## Variability Analysis
-**Consistent across users:** [Yes/No/Partially]
-**Consistent across time:** [Yes/No/Patterns observed]
-**Consistent across input types:** [Yes/No/Specific types affected]
+## Análisis de Variabilidad
+**Consistente entre usuarios:** [Sí/No/Parcialmente]
+**Consistente en el tiempo:** [Sí/No/Patrones observados]
+**Consistente entre tipos de entrada:** [Sí/No/Tipos específicos afectados]
 
-## Example Cases
-### Working Example (if any):
-Input: [Exact input]
-Expected Output: [What should happen]
-Actual Output: [What actually happened]
+## Casos de Ejemplo
+### Ejemplo Funcional (si existe):
+Entrada: [Entrada exacta]
+Salida Esperada: [Qué debería ocurrir]
+Salida Real: [Qué ocurrió realmente]
 
-### Failing Example:
-Input: [Exact input]
-Expected Output: [What should happen] 
-Actual Output: [What actually happened]
-Diff Analysis: [Specific differences]
+### Ejemplo Fallido:
+Entrada: [Entrada exacta]
+Salida Esperada: [Qué debería ocurrir] 
+Salida Real: [Qué ocurrió realmente]
+Análisis de Diferencias: [Diferencias específicas]
 ```
 
-**1.2 Performance Issues**
+**1.2 Problemas de Rendimiento**
 
-**Speed/Latency Problems:**
-- Response time >expected threshold
-- Timeouts o hanging responses
-- Inconsistent response times
+**Problemas de Velocidad/Latencia:**
+- Tiempo de respuesta >umbral esperado
+- Timeouts o respuestas colgadas
+- Tiempos de respuesta inconsistentes
 
-**Resource Usage:**
-- Token consumption higher than expected
-- Rate limiting triggers
-- Cost escalation
+**Uso de Recursos:**
+- Consumo de tokens mayor al esperado
+- Disparos de límite de tasa
+- Escalada de costos
 
-**Diagnostic Metrics:**
+**Métricas de Diagnóstico:**
 ```
-# PERFORMANCE DIAGNOSIS TEMPLATE
+# PLANTILLA DE DIAGNÓSTICO DE RENDIMIENTO
 
-## Response Time Analysis
-Average: [X] seconds (vs expected [Y] seconds)
-P95: [X] seconds
-P99: [X] seconds
-Timeout rate: [X]%
+## Análisis de Tiempo de Respuesta
+Promedio: [X] segundos (vs esperado [Y] segundos)
+P95: [X] segundos
+P99: [X] segundos
+Tasa de timeout: [X]%
 
-## Token Usage Analysis  
-Average tokens per request: [X] (vs expected [Y])
-Input tokens: [X] | Output tokens: [Y]
-Cost per request: $[X]
+## Análisis de Uso de Tokens
+Tokens promedio por solicitud: [X] (vs esperado [Y])
+Tokens de entrada: [X] | Tokens de salida: [Y]
+Costo por solicitud: $[X]
 
-## Error Rate Analysis
-Success rate: [X]%
-Error types:
+## Análisis de Tasa de Error
+Tasa de éxito: [X]%
+Tipos de error:
 - Timeout: [X]%
-- Rate limit: [X]%
-- Model error: [X]%
-- Invalid response: [X]%
+- Límite de tasa: [X]%
+- Error del modelo: [X]%
+- Respuesta inválida: [X]%
 ```
 
 ---
 
-## Layer 2: Input Validation
+## Capa 2: Validación de Entrada
 
-### 2.1 Data Quality Assessment
+### 2.1 Evaluación de Calidad de Datos
 
-**Input Data Checklist:**
+**Lista de Datos de Entrada:**
 ```
-# INPUT VALIDATION FRAMEWORK
+# MARCO DE VALIDACIÓN DE ENTRADA
 
-## Completeness Check
-- [ ] All required fields present
-- [ ] No unexpected null/empty values
-- [ ] Data within expected ranges
-- [ ] Referential integrity maintained
+## Verificación de Completitud
+- [ ] Todos los campos requeridos presentes
+- [ ] Sin valores nulos/vacíos inesperados
+- [ ] Datos dentro de rangos esperados
+- [ ] Integridad referencial mantenida
 
-## Format Validation
-- [ ] Data types match specifications
-- [ ] Encoding (UTF-8, etc.) correct
-- [ ] Delimiters and structure consistent
-- [ ] Special characters handled properly
+## Validación de Formato
+- [ ] Tipos de datos coinciden con especificaciones
+- [ ] Codificación (UTF-8, etc.) correcta
+- [ ] Delimitadores y estructura consistentes
+- [ ] Caracteres especiales manejados correctamente
 
-## Content Quality
-- [ ] No truncated data
-- [ ] Logical consistency within dataset
-- [ ] Temporal consistency (dates, sequences)
-- [ ] Domain-specific validation rules met
-```
-
-**Diagnostic Process:**
-```
-# STEP 1: Isolate Input Variables
-Test with:
-1. Minimal viable input (simplest case that should work)
-2. Known good input (previously working example)
-3. Systematic variation (change one element at a time)
-
-# STEP 2: Input Boundary Testing
-- Maximum size inputs
-- Minimum size inputs  
-- Edge cases (empty strings, special characters)
-- International characters and languages
-
-# STEP 3: Data Lineage Verification
-- Trace data source and transformations
-- Verify no corruption in pipeline
-- Validate preprocessing steps
-- Check for recent changes in upstream systems
+## Calidad de Contenido
+- [ ] Sin datos truncados
+- [ ] Consistencia lógica dentro del conjunto de datos
+- [ ] Consistencia temporal (fechas, secuencias)
+- [ ] Reglas de validación específicas del dominio cumplidas
 ```
 
-### 2.2 Context Loading Issues
-
-**Context Validation:**
+**Proceso de Diagnóstico:**
 ```
-# CONTEXT COMPLETENESS AUDIT
+# PASO 1: Aislar Variables de Entrada
+Probar con:
+1. Entrada mínima viable (caso más simple que debería funcionar)
+2. Entrada buena conocida (ejemplo que funcionó previamente)
+3. Variación sistemática (cambiar un elemento a la vez)
 
-## Essential Context Elements
-- [ ] User role/persona clearly defined
-- [ ] Business objective explicit
-- [ ] Constraints and limitations specified
-- [ ] Success criteria established
-- [ ] Domain knowledge provided
+# PASO 2: Pruebas de Límites de Entrada
+- Entradas de tamaño máximo
+- Entradas de tamaño mínimo
+- Casos límite (cadenas vacías, caracteres especiales)
+- Caracteres internacionales e idiomas
 
-## Context Quality Checks
-- [ ] Information is current and relevant
-- [ ] No conflicting information
-- [ ] Appropriate level of detail
-- [ ] Cultural/linguistic context included
-- [ ] Historical context when relevant
-
-## Context Size Analysis
-Total context tokens: [X]
-Context window utilization: [X]%
-Critical info placement: [Beginning/Middle/End]
-Information density: [High/Medium/Low]
+# PASO 3: Verificación de Linaje de Datos
+- Rastrear fuente de datos y transformaciones
+- Verificar que no haya corrupción en el pipeline
+- Validar pasos de preprocesamiento
+- Verificar cambios recientes en sistemas previos
 ```
 
----
+### 2.2 Problemas de Carga de Contexto
 
-## Layer 3: Logic Validation
-
-### 3.1 Prompt Structure Analysis
-
-**Logic Flow Evaluation:**
+**Validación de Contexto:**
 ```
-# PROMPT LOGIC AUDIT TEMPLATE
+# AUDITORÍA DE COMPLETITUD DE CONTEXTO
 
-## Role Definition Analysis
-**Clarity Score (1-10):** [X]
-- Is the role specific enough? [Yes/No]
-- Does it match the task complexity? [Yes/No]
-- Are expertise requirements realistic? [Yes/No]
+## Elementos Esenciales de Contexto
+- [ ] Rol/persona del usuario claramente definido
+- [ ] Objetivo de negocio explícito
+- [ ] Restricciones y limitaciones especificadas
+- [ ] Criterios de éxito establecidos
+- [ ] Conocimiento de dominio proporcionado
 
-## Instruction Sequence Analysis
-**Logical Flow Score (1-10):** [X]
-Step-by-step evaluation:
-1. [Instruction] → Logic check: [Valid/Invalid/Ambiguous]
-2. [Instruction] → Logic check: [Valid/Invalid/Ambiguous]
-3. [Instruction] → Dependencies: [Previous step/Independent]
+## Verificaciones de Calidad de Contexto
+- [ ] La información es actual y relevante
+- [ ] Sin información conflictiva
+- [ ] Nivel de detalle apropiado
+- [ ] Contexto cultural/lingüístico incluido
+- [ ] Contexto histórico cuando sea relevante
 
-## Constraint Analysis
-**Constraint Completeness (1-10):** [X]
-- Technical constraints properly specified
-- Business constraints included
-- Resource limitations acknowledged
-- Quality requirements defined
-
-## Output Specification Analysis
-**Specificity Score (1-10):** [X]
-- Format requirements clear
-- Content expectations specific
-- Success criteria measurable
-- Examples provided when needed
-```
-
-### 3.2 Chain of Reasoning Validation
-
-**For Complex Multi-Step Prompts:**
-```
-# REASONING CHAIN DIAGNOSIS
-
-## Step Dependency Analysis
-Map each logical step:
-Step 1: [Description] → Depends on: [Input/Assumption]
-Step 2: [Description] → Depends on: [Step 1 output/Additional input]
-Step N: [Description] → Depends on: [Previous steps/External factors]
-
-## Logical Gap Identification
-- Missing steps in reasoning chain
-- Unsupported leaps in logic
-- Circular dependencies
-- Impossible or contradictory requirements
-
-## Alternative Path Analysis
-- What if Step X fails?
-- Are there fallback reasoning paths?
-- How robust is the logic to variations?
+## Análisis de Tamaño de Contexto
+Tokens totales de contexto: [X]
+Utilización de ventana de contexto: [X]%
+Ubicación de info crítica: [Inicio/Medio/Final]
+Densidad de información: [Alta/Media/Baja]
 ```
 
 ---
 
-## Layer 4: Context Analysis
+## Capa 3: Validación de Lógica
 
-### 4.1 Environmental Factors
+### 3.1 Análisis de Estructura del Prompt
 
-**External Variables Assessment:**
+**Evaluación de Flujo Lógico:**
 ```
-# ENVIRONMENTAL CONTEXT AUDIT
+# PLANTILLA DE AUDITORÍA DE LÓGICA DE PROMPT
 
-## Model-Specific Factors
-Model version: [Specific version]
-Recent model updates: [Date of last update]
-Known model limitations: [Documented issues]
-Model-specific best practices: [Compliance check]
+## Análisis de Definición de Rol
+**Puntuación de Claridad (1-10):** [X]
+- ¿Es el rol lo suficientemente específico? [Sí/No]
+- ¿Coincide con la complejidad de la tarea? [Sí/No]
+- ¿Son realistas los requisitos de experiencia? [Sí/No]
 
-## API and Infrastructure
-API endpoint: [URL/Version]
-Rate limiting status: [Current limits and usage]
-Service health: [Any known issues]
-Regional differences: [If using different endpoints]
+## Análisis de Secuencia de Instrucciones
+**Puntuación de Flujo Lógico (1-10):** [X]
+Evaluación paso a paso:
+1. [Instrucción] → Verificación lógica: [Válida/Inválida/Ambigua]
+2. [Instrucción] → Verificación lógica: [Válida/Inválida/Ambigua]
+3. [Instrucción] → Dependencias: [Paso anterior/Independiente]
 
-## Temporal Factors
-Time of day: [Peak/Off-peak usage periods]
-Day of week: [Patterns in model performance]
-Recent changes: [Any system/prompt changes in last 30 days]
-Seasonal considerations: [If relevant to content]
-```
+## Análisis de Restricciones
+**Completitud de Restricciones (1-10):** [X]
+- Restricciones técnicas correctamente especificadas
+- Restricciones de negocio incluidas
+- Limitaciones de recursos reconocidas
+- Requisitos de calidad definidos
 
-### 4.2 User and Context Variability
-
-**User Behavior Analysis:**
-```
-# USER CONTEXT DIAGNOSIS
-
-## User Expertise Level
-Domain knowledge: [Expert/Intermediate/Novice]
-AI familiarity: [High/Medium/Low]
-Expected interaction style: [Technical/Business/Casual]
-
-## Use Case Variance
-Primary use case: [As designed]
-Actual use case: [How actually being used]
-Use case drift: [Evolution over time]
-Edge case frequency: [How often unusual requests]
-
-## Organizational Context
-Industry specifics: [Relevant regulations/standards]
-Company culture: [Formal/Informal communication]
-Stakeholder expectations: [Technical depth, timeline, format]
-Integration requirements: [How output will be used]
+## Análisis de Especificación de Salida
+**Puntuación de Especificidad (1-10):** [X]
+- Requisitos de formato claros
+- Expectativas de contenido específicas
+- Criterios de éxito medibles
+- Ejemplos proporcionados cuando es necesario
 ```
 
----
+### 3.2 Validación de Cadena de Razonamiento
 
-## Layer 5: Output Validation
-
-### 5.1 Response Quality Framework
-
-**Multi-Dimensional Quality Assessment:**
+**Para Prompts Complejos de Múltiples Pasos:**
 ```
-# OUTPUT QUALITY SCORECARD
+# DIAGNÓSTICO DE CADENA DE RAZONAMIENTO
 
-## Accuracy (Weight: 30%)
-Factual correctness: [Score 1-10]
-- Verifiable facts: [Correct/Incorrect/Unverifiable]
-- Logical consistency: [Consistent/Minor issues/Major issues]
-- Domain expertise demonstration: [Expert/Competent/Lacking]
+## Análisis de Dependencia de Pasos
+Mapear cada paso lógico:
+Paso 1: [Descripción] → Depende de: [Entrada/Suposición]
+Paso 2: [Descripción] → Depende de: [Salida del Paso 1/Entrada adicional]
+Paso N: [Descripción] → Depende de: [Pasos anteriores/Factores externos]
 
-## Completeness (Weight: 25%)
-Requirements fulfillment: [Score 1-10]
-- All requested elements present: [Yes/Partial/No]
-- Appropriate depth: [Too shallow/Right/Too deep]
-- Missing critical information: [None/Minor/Major]
+## Identificación de Brechas Lógicas
+- Pasos faltantes en la cadena de razonamiento
+- Saltos lógicos sin soporte
+- Dependencias circulares
+- Requisitos imposibles o contradictorios
 
-## Relevance (Weight: 25%)
-Task alignment: [Score 1-10]
-- Addresses core question: [Directly/Partially/Off-topic]
-- Appropriate for audience: [Yes/Somewhat/No]
-- Actionable for intended use: [Highly/Moderately/Not]
-
-## Usability (Weight: 20%)
-Practical utility: [Score 1-10]
-- Format supports intended use: [Perfect/Good/Poor]
-- Language clarity: [Crystal clear/Clear/Unclear]
-- Implementation guidance: [Detailed/Adequate/Insufficient]
-```
-
-### 5.2 Output Consistency Analysis
-
-**Consistency Testing Protocol:**
-```
-# CONSISTENCY VALIDATION TEMPLATE
-
-## Reproducibility Test
-Execution 1: [Date/Time] → Output: [Summary/Hash]
-Execution 2: [Date/Time] → Output: [Summary/Hash]
-Execution 3: [Date/Time] → Output: [Summary/Hash]
-
-Consistency Score: [X]% similarity
-Variance Analysis:
-- Content differences: [Significant/Minor/None]
-- Format differences: [Significant/Minor/None]
-- Quality differences: [Significant/Minor/None]
-
-## Cross-User Consistency
-User A (Expert): [Output summary]
-User B (Intermediate): [Output summary]  
-User C (Novice): [Output summary]
-
-Inter-user consistency: [High/Medium/Low]
-Expertise-dependent variations: [Expected/Unexpected]
-
-## Temporal Consistency
-Week 1 average quality: [Score]
-Week 2 average quality: [Score]
-Week 3 average quality: [Score]
-
-Trend: [Improving/Stable/Degrading]
-Significant changes: [Date and description]
+## Análisis de Rutas Alternativas
+- ¿Qué pasa si el Paso X falla?
+- ¿Hay rutas de razonamiento alternativas?
+- ¿Qué tan robusta es la lógica ante variaciones?
 ```
 
 ---
 
-## Troubleshooting Playbooks
+## Capa 4: Análisis de Contexto
 
-### Playbook 1: "Inconsistent Output Quality"
+### 4.1 Factores Ambientales
 
-**Symptoms:** Same prompt produces variable quality results
-**Primary Suspects:** Temperature settings, context loading, input variations
-
-**Diagnostic Steps:**
-1. **Isolate Variables**
-   ```
-   # Test with identical inputs multiple times
-   # Document temperature and sampling settings
-   # Check for random elements in prompt
-   ```
-
-2. **Context Analysis**
-   ```
-   # Verify context window isn't being truncated
-   # Check for dynamic context that changes
-   # Validate context relevance and accuracy
-   ```
-
-3. **Parameter Optimization**
-   ```
-   # Test temperature: 0.0 → 0.3 → 0.7 → 1.0
-   # Test top_p values: 0.1 → 0.5 → 0.9
-   # Document quality vs. creativity trade-offs
-   ```
-
-**Solution Framework:**
+**Evaluación de Variables Externas:**
 ```
-IF inconsistency > 20% quality variance:
-  → Lower temperature to 0.2 or below
-  → Add more specific constraints
-  → Include quality examples in prompt
+# AUDITORÍA DE CONTEXTO AMBIENTAL
 
-IF creative variance desired but quality must be maintained:
-  → Use temperature 0.5-0.7 with strict format requirements
-  → Add quality validation steps in prompt
-  → Implement post-processing validation
+## Factores Específicos del Modelo
+Versión del modelo: [Versión específica]
+Actualizaciones recientes del modelo: [Fecha de última actualización]
+Limitaciones conocidas del modelo: [Problemas documentados]
+Mejores prácticas específicas del modelo: [Verificación de cumplimiento]
+
+## API e Infraestructura
+Endpoint de API: [URL/Versión]
+Estado de limitación de tasa: [Límites actuales y uso]
+Salud del servicio: [Problemas conocidos]
+Diferencias regionales: [Si se usan endpoints diferentes]
+
+## Factores Temporales
+Hora del día: [Períodos de uso pico/fuera de pico]
+Día de la semana: [Patrones en rendimiento del modelo]
+Cambios recientes: [Cambios de sistema/prompt en últimos 30 días]
+Consideraciones estacionales: [Si es relevante para el contenido]
 ```
 
-### Playbook 2: "Slow Response Times"
+### 4.2 Variabilidad de Usuario y Contexto
 
-**Symptoms:** Response times significantly above baseline
-**Primary Suspects:** Token count, model choice, API issues
-
-**Diagnostic Steps:**
-1. **Token Analysis**
-   ```
-   # Measure input token count
-   # Analyze output token requirements
-   # Check for unnecessary verbosity in prompt
-   ```
-
-2. **Prompt Optimization**
-   ```
-   # Remove redundant information
-   # Compress context without losing meaning
-   # Use bullet points vs. paragraphs where possible
-   ```
-
-3. **Infrastructure Check**
-   ```
-   # Test from different geographic locations
-   # Check API status and known issues
-   # Monitor for rate limiting
-   ```
-
-**Solution Framework:**
+**Análisis de Comportamiento del Usuario:**
 ```
-IF token count > 8K:
-  → Compress context and instructions
-  → Split into multiple smaller prompts
-  → Use summarization for large inputs
+# DIAGNÓSTICO DE CONTEXTO DE USUARIO
 
-IF infrastructure issues:
-  → Implement retry logic with exponential backoff
-  → Add request queuing for high-traffic periods
-  → Consider alternative endpoints or models
-```
+## Nivel de Experiencia del Usuario
+Conocimiento del dominio: [Experto/Intermedio/Novato]
+Familiaridad con IA: [Alta/Media/Baja]
+Estilo de interacción esperado: [Técnico/Negocios/Informal]
 
-### Playbook 3: "Wrong or Irrelevant Output"
+## Variación de Caso de Uso
+Caso de uso principal: [Según diseño]
+Caso de uso real: [Cómo se está usando realmente]
+Desviación de caso de uso: [Evolución en el tiempo]
+Frecuencia de casos límite: [Qué tan frecuentes son solicitudes inusuales]
 
-**Symptoms:** Output is well-formatted but doesn't address the actual need
-**Primary Suspects:** Ambiguous instructions, missing context, logic errors
-
-**Diagnostic Steps:**
-1. **Instruction Clarity**
-   ```
-   # Review prompt for ambiguous language
-   # Check if task complexity matches instruction detail
-   # Verify examples align with expectations
-   ```
-
-2. **Context Completeness**
-   ```
-   # Map required knowledge vs. provided context
-   # Check for domain-specific terminology
-   # Verify business context is sufficient
-   ```
-
-3. **Logic Validation**
-   ```
-   # Walk through prompt step-by-step
-   # Identify assumptions being made
-   # Check for logical gaps or jumps
-   ```
-
-**Solution Framework:**
-```
-IF ambiguous instructions:
-  → Add specific examples of desired output
-  → Use constraint-based specification
-  → Break complex tasks into subtasks
-
-IF missing context:
-  → Provide domain-specific background
-  → Include relevant business constraints
-  → Add success criteria and examples
-
-IF logic errors:
-  → Simplify reasoning chain
-  → Add validation steps within prompt
-  → Use chain-of-thought prompting
+## Contexto Organizacional
+Especificidades de la industria: [Regulaciones/estándares relevantes]
+Cultura empresarial: [Comunicación formal/informal]
+Expectativas de interesados: [Profundidad técnica, cronograma, formato]
+Requisitos de integración: [Cómo se usará la salida]
 ```
 
 ---
 
-## Monitoring and Prevention
+## Capa 5: Validación de Salida
 
-### Real-Time Monitoring Framework
+### 5.1 Marco de Calidad de Respuesta
 
-**Quality Metrics Dashboard:**
+**Evaluación de Calidad Multidimensional:**
 ```
-# PROMPT HEALTH MONITORING
+# TARJETA DE PUNTUACIÓN DE CALIDAD DE SALIDA
 
-## Response Quality Trends
-- Average quality score (7-day rolling)
-- Quality variance (consistency measure)
-- User satisfaction ratings
-- Task completion rates
+## Precisión (Peso: 30%)
+Corrección factual: [Puntuación 1-10]
+- Hechos verificables: [Correctos/Incorrectos/No verificables]
+- Consistencia lógica: [Consistente/Problemas menores/Problemas mayores]
+- Demostración de experiencia en dominio: [Experto/Competente/Deficiente]
 
-## Performance Metrics
-- Average response time
-- 95th percentile response time
-- Error rates by type
-- Token usage efficiency
+## Completitud (Peso: 25%)
+Cumplimiento de requisitos: [Puntuación 1-10]
+- Todos los elementos solicitados presentes: [Sí/Parcial/No]
+- Profundidad apropiada: [Muy superficial/Correcta/Demasiado profunda]
+- Información crítica faltante: [Ninguna/Menor/Mayor]
 
-## Usage Patterns
-- Request volume trends
-- User behavior changes
-- Edge case frequency
-- Seasonal variations
+## Relevancia (Peso: 25%)
+Alineación con la tarea: [Puntuación 1-10]
+- Aborda la pregunta central: [Directamente/Parcialmente/Fuera de tema]
+- Apropiado para la audiencia: [Sí/Algo/No]
+- Accionable para el uso previsto: [Altamente/Moderadamente/No]
+
+## Usabilidad (Peso: 20%)
+Utilidad práctica: [Puntuación 1-10]
+- El formato apoya el uso previsto: [Perfecto/Bueno/Pobre]
+- Claridad del lenguaje: [Cristalina/Clara/Poco clara]
+- Guía de implementación: [Detallada/Adecuada/Insuficiente]
 ```
 
-### Automated Quality Assurance
+### 5.2 Análisis de Consistencia de Salida
 
-**Quality Gates:**
+**Protocolo de Pruebas de Consistencia:**
 ```
-# AUTOMATED QA PIPELINE
+# PLANTILLA DE VALIDACIÓN DE CONSISTENCIA
 
-## Pre-Production Testing
-- Regression test suite (50+ test cases)
-- Performance benchmarks
-- Cross-model validation
-- User acceptance criteria
+## Prueba de Reproducibilidad
+Ejecución 1: [Fecha/Hora] → Salida: [Resumen/Hash]
+Ejecución 2: [Fecha/Hora] → Salida: [Resumen/Hash]
+Ejecución 3: [Fecha/Hora] → Salida: [Resumen/Hash]
 
-## Production Monitoring
-- Real-time quality scoring
-- Anomaly detection for response patterns
-- Automatic rollback triggers
-- User feedback integration
+Puntuación de Consistencia: [X]% de similitud
+Análisis de Varianza:
+- Diferencias de contenido: [Significativas/Menores/Ninguna]
+- Diferencias de formato: [Significativas/Menores/Ninguna]
+- Diferencias de calidad: [Significativas/Menores/Ninguna]
 
-## Continuous Improvement
-- A/B testing framework
-- Performance trend analysis
-- Usage pattern optimization
-- Proactive issue identification
+## Consistencia Entre Usuarios
+Usuario A (Experto): [Resumen de salida]
+Usuario B (Intermedio): [Resumen de salida]
+Usuario C (Novato): [Resumen de salida]
+
+Consistencia entre usuarios: [Alta/Media/Baja]
+Variaciones dependientes de experiencia: [Esperadas/Inesperadas]
+
+## Consistencia Temporal
+Semana 1 calidad promedio: [Puntuación]
+Semana 2 calidad promedio: [Puntuación]
+Semana 3 calidad promedio: [Puntuación]
+
+Tendencia: [Mejorando/Estable/Degradando]
+Cambios significativos: [Fecha y descripción]
 ```
 
 ---
 
-## Emergency Response Procedures
+## Manuales de Resolución de Problemas
 
-### Incident Response Framework
+### Manual 1: "Calidad de Salida Inconsistente"
 
-**Severity Levels:**
+**Síntomas:** El mismo prompt produce resultados de calidad variable
+**Sospechosos Principales:** Configuración de temperatura, carga de contexto, variaciones de entrada
 
-**P0 - Critical:** Complete failure or major quality degradation
-- Response time: <15 minutes
-- Actions: Immediate rollback, incident commander assigned
+**Pasos de Diagnóstico:**
+1. **Aislar Variables**
+   ```
+   # Probar con entradas idénticas múltiples veces
+   # Documentar configuración de temperatura y muestreo
+   # Verificar elementos aleatorios en el prompt
+   ```
 
-**P1 - High:** Significant impact to user experience
-- Response time: <1 hour  
-- Actions: Hotfix or configuration change
+2. **Análisis de Contexto**
+   ```
+   # Verificar que la ventana de contexto no se esté truncando
+   # Verificar contexto dinámico que cambia
+   # Validar relevancia y precisión del contexto
+   ```
 
-**P2 - Medium:** Moderate impact, workaround available
-- Response time: <4 hours
-- Actions: Planned fix in next deployment
+3. **Optimización de Parámetros**
+   ```
+   # Probar temperatura: 0.0 → 0.3 → 0.7 → 1.0
+   # Probar valores top_p: 0.1 → 0.5 → 0.9
+   # Documentar compensaciones calidad vs. creatividad
+   ```
 
-**P3 - Low:** Minor issues, minimal user impact
-- Response time: <24 hours
-- Actions: Include in regular maintenance cycle
+**Marco de Solución:**
+```
+SI inconsistencia > 20% de varianza de calidad:
+  → Bajar temperatura a 0.2 o menos
+  → Agregar restricciones más específicas
+  → Incluir ejemplos de calidad en el prompt
 
-### Rollback Procedures
+SI se desea varianza creativa pero se debe mantener calidad:
+  → Usar temperatura 0.5-0.7 con requisitos de formato estrictos
+  → Agregar pasos de validación de calidad en el prompt
+  → Implementar validación de post-procesamiento
+```
 
-**Immediate Rollback Triggers:**
-- Quality score drops >30% from baseline
-- Error rate exceeds 25%
-- User complaints exceed threshold
-- Security concerns identified
+### Manual 2: "Tiempos de Respuesta Lentos"
 
-**Rollback Process:**
-1. **Immediate Action (0-5 minutes)**
-   - Revert to last known good configuration
-   - Notify stakeholders
-   - Begin impact assessment
+**Síntomas:** Tiempos de respuesta significativamente por encima de la línea base
+**Sospechosos Principales:** Conteo de tokens, elección de modelo, problemas de API
 
-2. **Short-term Stabilization (5-30 minutes)**
-   - Validate rollback effectiveness
-   - Monitor for cascading issues
-   - Prepare communication
+**Pasos de Diagnóstico:**
+1. **Análisis de Tokens**
+   ```
+   # Medir conteo de tokens de entrada
+   # Analizar requisitos de tokens de salida
+   # Verificar verbosidad innecesaria en el prompt
+   ```
 
-3. **Root Cause Analysis (30 minutes - 24 hours)**
-   - Document incident timeline
-   - Identify contributing factors
-   - Develop prevention strategies
+2. **Optimización del Prompt**
+   ```
+   # Eliminar información redundante
+   # Comprimir contexto sin perder significado
+   # Usar viñetas vs. párrafos donde sea posible
+   ```
+
+3. **Verificación de Infraestructura**
+   ```
+   # Probar desde diferentes ubicaciones geográficas
+   # Verificar estado de API y problemas conocidos
+   # Monitorear limitación de tasa
+   ```
+
+**Marco de Solución:**
+```
+SI conteo de tokens > 8K:
+  → Comprimir contexto e instrucciones
+  → Dividir en múltiples prompts más pequeños
+  → Usar resumen para entradas grandes
+
+SI problemas de infraestructura:
+  → Implementar lógica de reintento con retroceso exponencial
+  → Agregar encolado de solicitudes para períodos de alto tráfico
+  → Considerar endpoints o modelos alternativos
+```
+
+### Manual 3: "Salida Incorrecta o Irrelevante"
+
+**Síntomas:** La salida tiene buen formato pero no aborda la necesidad real
+**Sospechosos Principales:** Instrucciones ambiguas, contexto faltante, errores de lógica
+
+**Pasos de Diagnóstico:**
+1. **Claridad de Instrucciones**
+   ```
+   # Revisar el prompt en busca de lenguaje ambiguo
+   # Verificar si la complejidad de la tarea coincide con el detalle de instrucciones
+   # Verificar que los ejemplos se alineen con las expectativas
+   ```
+
+2. **Completitud de Contexto**
+   ```
+   # Mapear conocimiento requerido vs. contexto proporcionado
+   # Verificar terminología específica del dominio
+   # Verificar que el contexto de negocio sea suficiente
+   ```
+
+3. **Validación de Lógica**
+   ```
+   # Recorrer el prompt paso a paso
+   # Identificar suposiciones que se están haciendo
+   # Verificar brechas o saltos lógicos
+   ```
+
+**Marco de Solución:**
+```
+SI instrucciones ambiguas:
+  → Agregar ejemplos específicos de la salida deseada
+  → Usar especificación basada en restricciones
+  → Dividir tareas complejas en subtareas
+
+SI contexto faltante:
+  → Proporcionar antecedentes específicos del dominio
+  → Incluir restricciones de negocio relevantes
+  → Agregar criterios de éxito y ejemplos
+
+SI errores de lógica:
+  → Simplificar la cadena de razonamiento
+  → Agregar pasos de validación dentro del prompt
+  → Usar prompting de cadena de pensamiento
+```
 
 ---
 
-*Este framework de troubleshooting debe ser personalizado para cada organización y caso de uso específico, pero proporciona una base sólida para el diagnóstico sistemático de problemas de prompts.*
+## Monitoreo y Prevención
+
+### Marco de Monitoreo en Tiempo Real
+
+**Panel de Métricas de Calidad:**
+```
+# MONITOREO DE SALUD DE PROMPTS
+
+## Tendencias de Calidad de Respuesta
+- Puntuación de calidad promedio (promedio móvil de 7 días)
+- Varianza de calidad (medida de consistencia)
+- Calificaciones de satisfacción del usuario
+- Tasas de finalización de tareas
+
+## Métricas de Rendimiento
+- Tiempo de respuesta promedio
+- Tiempo de respuesta percentil 95
+- Tasas de error por tipo
+- Eficiencia de uso de tokens
+
+## Patrones de Uso
+- Tendencias de volumen de solicitudes
+- Cambios en comportamiento del usuario
+- Frecuencia de casos límite
+- Variaciones estacionales
+```
+
+### Aseguramiento Automatizado de Calidad
+
+**Puertas de Calidad:**
+```
+# PIPELINE DE QA AUTOMATIZADO
+
+## Pruebas Pre-Producción
+- Suite de pruebas de regresión (50+ casos de prueba)
+- Puntos de referencia de rendimiento
+- Validación entre modelos
+- Criterios de aceptación del usuario
+
+## Monitoreo de Producción
+- Puntuación de calidad en tiempo real
+- Detección de anomalías para patrones de respuesta
+- Disparadores de reversión automática
+- Integración de retroalimentación del usuario
+
+## Mejora Continua
+- Marco de pruebas A/B
+- Análisis de tendencias de rendimiento
+- Optimización de patrones de uso
+- Identificación proactiva de problemas
+```
+
+---
+
+## Procedimientos de Respuesta de Emergencia
+
+### Marco de Respuesta a Incidentes
+
+**Niveles de Severidad:**
+
+**P0 - Crítico:** Falla completa o degradación mayor de calidad
+- Tiempo de respuesta: <15 minutos
+- Acciones: Reversión inmediata, comandante de incidente asignado
+
+**P1 - Alto:** Impacto significativo en experiencia del usuario
+- Tiempo de respuesta: <1 hora
+- Acciones: Corrección rápida o cambio de configuración
+
+**P2 - Medio:** Impacto moderado, solución alternativa disponible
+- Tiempo de respuesta: <4 horas
+- Acciones: Corrección planificada en próximo despliegue
+
+**P3 - Bajo:** Problemas menores, impacto mínimo en usuario
+- Tiempo de respuesta: <24 horas
+- Acciones: Incluir en ciclo de mantenimiento regular
+
+### Procedimientos de Reversión
+
+**Disparadores de Reversión Inmediata:**
+- Puntuación de calidad cae >30% de la línea base
+- Tasa de error excede 25%
+- Quejas de usuarios exceden umbral
+- Preocupaciones de seguridad identificadas
+
+**Proceso de Reversión:**
+1. **Acción Inmediata (0-5 minutos)**
+   - Revertir a última configuración buena conocida
+   - Notificar a interesados
+   - Iniciar evaluación de impacto
+
+2. **Estabilización a Corto Plazo (5-30 minutos)**
+   - Validar efectividad de reversión
+   - Monitorear problemas en cascada
+   - Preparar comunicación
+
+3. **Análisis de Causa Raíz (30 minutos - 24 horas)**
+   - Documentar cronología del incidente
+   - Identificar factores contribuyentes
+   - Desarrollar estrategias de prevención
+
+---
+
+*Este marco de resolución de problemas debe ser personalizado para cada organización y caso de uso específico, pero proporciona una base sólida para el diagnóstico sistemático de problemas de prompts.*
