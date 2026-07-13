@@ -243,7 +243,7 @@ ${TRANSACTION_DATA}
 # DOCUMENTACIÓN Y COMPLIANCE
 - Audit trail completo de analysis factors
 - Citations de regulatory requirements relevantes  
-- Recommendations maintienen presumption of innocence
+- Las recomendaciones mantienen la presunción de inocencia
 - Analysis objective y fact-based únicamente
 ```
 
