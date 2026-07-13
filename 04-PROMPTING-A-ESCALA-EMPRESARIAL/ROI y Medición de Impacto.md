@@ -673,15 +673,15 @@ PRIORITIZATION CRITERIA:
 
 ## **Resumen: El Arte de Medir Valor**
 
-La medición de ROI en prompt engineering no es solo accounting; es strategic intelligence que guía decision-making y optimiza resource allocation. The companies que master this measurement become the ones que can justify larger investments y achieve greater competitive advantage.
+La medición de ROI en ingeniería de prompts no es solo contabilidad; es inteligencia estratégica que guía la toma de decisiones y optimiza la asignación de recursos. Las empresas que dominan esta medición se convierten en aquellas que pueden justificar mayores inversiones y lograr una mayor ventaja competitiva.
 
 **Principios fundamentales:**
-1. **Measure what matters** to the business
-2. **Attribute value accurately** pero practically
-3. **Communicate impact clearly** to all stakeholders
-4. **Optimize continuously** based on data
-5. **Think long-term** while delivering short-term value
+1. **Mide lo que importa** para el negocio
+2. **Atribuye valor con precisión** pero de forma práctica
+3. **Comunica el impacto claramente** a todos los interesados
+4. **Optimiza continuamente** basándote en datos
+5. **Piensa a largo plazo** mientras entregas valor a corto plazo
 
-**El objetivo final:** Transform prompt engineering from cost center to value generator, estableciendo clear business case para continued investment y expansion.
+**El objetivo final:** Transformar la ingeniería de prompts de centro de costo a generador de valor, estableciendo un caso de negocio claro para la inversión continua y expansión.
 
-**Tu competitive advantage:** La capacidad de demostrar, cuantificar y optimizar el business value de prompt engineering, turning technical capability into strategic business advantage.
+**Tu ventaja competitiva:** La capacidad de demostrar, cuantificar y optimizar el valor empresarial de la ingeniería de prompts, convirtiendo la capacidad técnica en una ventaja estratégica de negocio.
