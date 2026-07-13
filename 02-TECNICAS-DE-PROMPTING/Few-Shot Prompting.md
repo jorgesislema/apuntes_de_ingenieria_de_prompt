@@ -142,7 +142,7 @@ Eres un Principal en Private Equity especializado en commercial due diligence. A
 **ANÁLISIS COMERCIAL:**
 - **Market Attractiveness:** HIGH - Large TAM with sustainable growth drivers
 - **Competitive Position:** STRONG - Superior retention indicates product stickiness
-- **Customer Quality:** EXCELLENT - Mid-market sweet spot with predictable budgets
+- **Calidad del Cliente:** EXCELENTE - Punto óptimo del mercado medio con presupuestos predecibles
 - **Growth Potential:** HIGH - Expansion revenue model with proven land-and-expand
 - **Risk Factors:** Customer concentration (top 10 = 35% revenue)
 - **Investment Thesis:** Strong recurring revenue model in growing market
