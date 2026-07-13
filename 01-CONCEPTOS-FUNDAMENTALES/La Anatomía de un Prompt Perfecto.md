@@ -19,8 +19,8 @@ Define quién necesitas que "sea" la IA para esta tarea específica.
 
 **Estructura base:**
 ```
-Eres un [SPECIFIC_EXPERT] con [YEARS] años de experiencia en [SPECIFIC_DOMAIN].
-Tu especialización incluye [SPECIFIC_SKILLS] y has trabajado con [RELEVANT_CONTEXT].
+Eres un [EXPERTO_ESPECÍFICO] con [AÑOS] años de experiencia en [DOMINIO_ESPECÍFICO].
+Tu especialización incluye [HABILIDADES_ESPECÍFICAS] y has trabajado con [CONTEXTO_RELEVANTE].
 ```
 
 **Ejemplos de calidad:**
@@ -153,7 +153,7 @@ Especifica cómo medirás si el output es exitoso.
 - [Métrica 1]: Objetivo [X], actualmente [Y], timeline [Z]
 - [Métrica 2]: Objetivo [X], actualmente [Y], timeline [Z]
 
-## Métricas Secundarias (Nice-to-have):
+## Métricas Secundarias (Deseables):
 - [Métrica 3]: Target improvement [X%]
 - [Métrica 4]: Target improvement [X%]
 
@@ -260,12 +260,12 @@ Framework para priorizar possible root causes basado en:
 ## HYPOTHESIS PRIORITIZATION
 
 ### High-Impact Hypotheses (Test first):
-1. **[Hypothesis]:** [Description]
-   - **Rationale:** [Why this could be the cause]
-   - **Test method:** [How to validate]
-   - **Success criteria:** [Specific metrics]
-   - **Timeline:** [X weeks]
-   - **Resource req:** [Specific needs]
+1. **[Hipótesis]:** [Descripción]
+   - **Justificación:** [Por qué esto podría ser la causa]
+   - **Método de prueba:** [Cómo validar]
+   - **Criterios de éxito:** [Métricas específicas]
+   - **Calendario:** [X semanas]
+   - **Recursos necesarios:** [Necesidades específicas]
 
 ### Medium-Impact Hypotheses:
 [Same format]
