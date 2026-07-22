@@ -1,3 +1,5 @@
+
+
 # Alucinación (Hallucination)
 ## Cuando la IA “inventa” información que parece real
 
