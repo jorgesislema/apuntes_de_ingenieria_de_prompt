@@ -32,6 +32,7 @@ En un mundo donde la inteligencia artificial está transformando cada industria,
 - **04-PROMPTING-A-ESCALA-EMPRESARIAL** - Cómo las grandes empresas usan prompts
 - **05-ADAPTACION-POR-MODELO-Y-PLATAFORMA** - GPT, Claude, Gemini, DeepSeek, Llama y más
 - **15-FUNCTION-CALLING-Y-OUTPUT-ESTRUCTURADO** - Function calling, tool use y JSON mode
+- **16-AGENTES-SKILLS-Y-LOOPS** - Agentes autonomos, catalogo de skills y ciclos de ejecucion
 
 ### Marcos de Decisión
 - **Prompting vs Fine-Tuning vs RAG** - Cuándo usar cada enfoque
@@ -51,6 +52,9 @@ En un mundo donde la inteligencia artificial está transformando cada industria,
 - **13-HERRAMIENTAS-DEL-OFICIO** - Las mejores plataformas, APIs, evaluación y prompting para visión
 - **14-ESTRATEGIAS-DE-ORQUESTACION** - Workflows multi-agente y optimización de recursos
 
+### IA Autónoma
+- **16-AGENTES-SKILLS-Y-LOOPS** - Arquitectura de agentes, catálogo de skills y loops de ejecución
+
 ### Novedades de Julio 2026 (v2.0)
 - Function Calling y Outputs Estructurados (nuevo módulo)
 - Marco de decisión: Prompting vs Fine-tuning vs RAG
@@ -59,6 +63,7 @@ En un mundo donde la inteligencia artificial está transformando cada industria,
 - Prompting para Visión y Análisis de Imágenes
 - Modelos actualizados a Julio 2026 (GPT-4o, GPT-4.1, Claude 3.5/4, Gemini 2.5 Pro)
 - Esquemas gráficos ASCII en toda la documentación
+- Módulo de Agentes, Skills y Loops (arquitectura de IA autónoma)
 
 ---
 
@@ -175,6 +180,7 @@ Este repositorio incluye casos prácticos reales de:
 - Proyecto Final Integrador (capstone)
 - Prompting para Visión y Análisis de Imágenes
 - Esquemas gráficos ASCII en toda la documentación
+- Módulo de Agentes, Skills y Loops (IA autónoma)
 
 ### Próximas Adiciones:
 - Más ejemplos de empresas latinoamericanas
