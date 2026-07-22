@@ -601,6 +601,7 @@ Todas las definiciones completas en el [Glosario del Ingeniero](./00-GLOSARIO-DE
 | Vulnerabilidades, defensa, compliance | [12-SEGURIDAD-Y-DEFENSA-DE-PROMPTS](./12-SEGURIDAD-Y-DEFENSA-DE-PROMPTS/) |
 | Guia para dar clase (profes) | [GUIA-PARA-DAR-CLASE](./GUIA-PARA-DAR-CLASE.md) |
 | Ruta adaptada para jovenes (10-17 anos) | [junior/README](./junior/README.md) |
+| Agentes, skills y loops | [16-AGENTES-SKILLS-Y-LOOPS](./16-AGENTES-SKILLS-Y-LOOPS/) |
 
 ---
 
